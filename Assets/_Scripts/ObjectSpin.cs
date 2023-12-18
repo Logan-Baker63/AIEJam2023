@@ -24,9 +24,9 @@ public class ObjectSpin : MonoBehaviour
         transform.Rotate(new Vector3(0f, 100f * Time.deltaTime, 0f), Space.Self);
 
 
-        tempPosition = positionOffset;
+        //tempPosition = positionOffset;
         tempPosition.y += Mathf.Sin(Time.fixedTime * Mathf.PI * frequency) * amplitude;
 
-        transform.position = tempPosition;
+        //transform.position = tempPosition;
     }
 }
