@@ -75,13 +75,7 @@ public class Runner : MonoBehaviour
         if (m_amount <= 0)
         {
             // Die
-
-            // Update highscore
-            if (PlayerPrefs.GetInt("Highscore") < m_currentScore)
-            {
-                // New highscore!
-                PlayerPrefs.SetInt("Highscore", m_currentScore);
-            }
+            Die();
         }
         else
         {
@@ -111,6 +105,18 @@ public class Runner : MonoBehaviour
         }
 
         UpdateValueDisplay();
+    }
+
+    void Die()
+    {
+        // Update highscore
+        if (PlayerPrefs.GetInt("Highscore") < m_currentScore)
+        {
+            // New highscore!
+            PlayerPrefs.SetInt("Highscore", m_currentScore);
+        }
+
+        // Show UI
     }
 
     public void UpdateValueDisplay() => m_amountDisplay.text = m_amount.ToString();
