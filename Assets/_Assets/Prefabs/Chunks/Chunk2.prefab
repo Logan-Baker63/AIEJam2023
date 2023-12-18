@@ -95,6 +95,12 @@ MonoBehaviour:
   m_spawnables:
   - m_prefab: {fileID: 2316804844155969637, guid: cf221f18ae1c56042983601a03bbd4ba,
       type: 3}
+    m_spawnWeight: 2
+  - m_prefab: {fileID: 2316804844155969637, guid: ebfdf4fd01d994d4cb731ae44aadd30d,
+      type: 3}
+    m_spawnWeight: 2
+  - m_prefab: {fileID: 2316804844155969637, guid: 02d9711ff492a5d44ba03dd3fbcd36c3,
+      type: 3}
     m_spawnWeight: 1
 --- !u!1 &4767140690204532560
 GameObject:
