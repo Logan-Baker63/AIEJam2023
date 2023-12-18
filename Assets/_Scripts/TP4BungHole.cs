@@ -13,6 +13,7 @@ public class TP4BungHole : MonoBehaviour
 
     private void Awake()
     {
+        //UpdateRollSize();
         m_obstacle = GetComponentInParent<Obstacle>();
         m_obstacle.onDamaged += UpdateRollSize;
     }
@@ -36,7 +37,7 @@ public class TP4BungHole : MonoBehaviour
             SetAllToFalse();
             _tp3.SetActive(true);
         }
-        if (currentHealth < (maxHealth * 0.25))
+        if (currentHealth < (maxHealth * 0.05))
         {
             SetAllToFalse();
             _tp4.SetActive(true);
