@@ -24,17 +24,22 @@ public class Runner : MonoBehaviour
 
     [SerializeField] float m_moveLimit;
 
+    bool m_isRunning = true;
+    public bool isRunning { get { return m_isRunning; } set { m_isRunning = value; } }
+
     private void Awake()
     {
         rb = FindObjectOfType<Rigidbody>();
         m_amountDisplay = GetComponentInChildren<TextMeshPro>();
 
-        m_amountDisplay.text = m_amount.ToString();
+        UpdateValueDisplay();
     }
 
     private void FixedUpdate()
     {
-        rb.velocity = m_speed * Time.fixedDeltaTime * Vector3.forward;
+        if (m_isRunning) rb.velocity = m_speed * Time.fixedDeltaTime * Vector3.forward;
+        else rb.velocity = Vector3.zero;
+
         Move();
     }
 
@@ -75,6 +80,8 @@ public class Runner : MonoBehaviour
             }
         }
 
-        m_amountDisplay.text = m_amount.ToString();
+        UpdateValueDisplay();
     }
+
+    public void UpdateValueDisplay() => m_amountDisplay.text = m_amount.ToString();
 }
