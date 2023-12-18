@@ -5,7 +5,7 @@ using DG.Tweening;
 
 public class Scale : MonoBehaviour
 {
-    [SerializeField] private Transform _transform;
+    private Transform _transform;
     [SerializeField] private float _endValue;
     [SerializeField] private float _duration;
 
@@ -13,6 +13,7 @@ public class Scale : MonoBehaviour
     // Update is called once per frame
     void Awake()
     {
+        _transform = transform;
         _transform.DOScale(_endValue, _duration).SetLoops(-1, LoopType.Yoyo);
     }
 

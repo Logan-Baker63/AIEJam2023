@@ -7,16 +7,11 @@ public class RayRotation : MonoBehaviour
 {
     [SerializeField] private Transform _rays;
     [SerializeField] private float _rotateSpeed;
-    [SerializeField] private float _endValue;
-
-    // Update is called once per frame
-    //void Update()
-    // {
-    //     _rays.Rotate(0, 0, _rotateValue);
-    // }
+    [SerializeField] private float _rotValue;
 
     private void Awake()
     {
-
+        Vector3 byValue = new Vector3(0, 0, _rotValue);
+        _rays.transform.DOBlendableRotateBy(byValue, _rotateSpeed).SetLoops(-1, LoopType.Yoyo);
     }
 }
