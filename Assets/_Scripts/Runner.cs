@@ -57,6 +57,7 @@ public class Runner : MonoBehaviour
     private void Update()
     {
         m_speed += Time.deltaTime * m_gameData.speedIncreasePerSec;
+        AudioManager.Instance.PlayGroupAudio("WalkingSFX2");
     }
 
     public void Move()

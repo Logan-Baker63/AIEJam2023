@@ -30,9 +30,11 @@ public class AudioManager : MonoBehaviour
 
     private void Start()
     {
-        PlayMusic("Music");
+        //PlayMusic("Music");
         //MusicVolume(musicSlider.value);
         //SFXVolume(sfxSlider.value);
+        
+        
     }
 
     public void PlayMusic(string name)
