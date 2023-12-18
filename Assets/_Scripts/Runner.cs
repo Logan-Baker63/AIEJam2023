@@ -65,10 +65,13 @@ public class Runner : MonoBehaviour
             int iterations = m_amount + 1 - m_followers.Count;
             for (int i = 0; i < iterations; i++)
             {
-                Follower follower = Instantiate(m_followerPrefab, transform.position, Quaternion.identity).GetComponent<Follower>();
-                follower.transform.SetParent(m_followerParent);
-                m_followers.Add(follower);
-                follower.m_runner = this;
+                if (m_followers.Count < 15)
+                {
+                    Follower follower = Instantiate(m_followerPrefab, transform.position, Quaternion.identity).GetComponent<Follower>();
+                    follower.transform.SetParent(m_followerParent);
+                    m_followers.Add(follower);
+                    follower.m_runner = this;
+                }
             }
         }
 
