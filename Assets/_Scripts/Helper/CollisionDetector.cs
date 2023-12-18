@@ -26,7 +26,10 @@ public class CollisionDetector : MonoBehaviour
             onTriggerEnter?.Invoke(other);
         }
     }
-    private void OnTriggerStay(Collider other) => onTriggerStay?.Invoke(other);
+    private void OnTriggerStay(Collider other)
+    {
+        if (m_tagFilter.Contains(other.tag)) onTriggerStay?.Invoke(other);
+    }
     private void OnTriggerExit(Collider other)
     {
         RemoveFromList(other);
@@ -40,7 +43,10 @@ public class CollisionDetector : MonoBehaviour
             onCollisionEnter?.Invoke(other);
         }
     }
-    public void OnCollisionStay(Collision other) => onCollisionStay?.Invoke(other);
+    public void OnCollisionStay(Collision other)
+    {
+        if (m_tagFilter.Contains(other.gameObject.tag)) onCollisionStay?.Invoke(other);
+    }
     private void OnCollisionExit(Collision other)
     {
         RemoveFromList(other.collider);

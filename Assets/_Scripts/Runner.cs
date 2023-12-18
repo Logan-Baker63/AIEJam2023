@@ -14,7 +14,13 @@ public class Runner : MonoBehaviour
     [SerializeField] float m_sideSpeed;
 
     [SerializeField] int m_amount;
-    public int amount { get { return m_amount; } set { m_amount = value; } }
+    public int amount { get { return m_amount; } 
+        set 
+        { 
+            m_amount = value;
+            m_currentScore += value;
+        } 
+    }
 
     [SerializeField] Transform m_followerParent;
     [SerializeField] GameObject m_followerPrefab;
@@ -24,18 +30,33 @@ public class Runner : MonoBehaviour
 
     [SerializeField] float m_moveLimit;
 
+    bool m_isRunning = true;
+    public bool isRunning { get { return m_isRunning; } set { m_isRunning = value; } }
+
+    int m_currentScore;
+
+    GameData m_gameData;
+
     private void Awake()
     {
         rb = FindObjectOfType<Rigidbody>();
         m_amountDisplay = GetComponentInChildren<TextMeshPro>();
+        m_gameData = FindObjectOfType<GameData>();
 
-        m_amountDisplay.text = m_amount.ToString();
+        UpdateValueDisplay();
     }
 
     private void FixedUpdate()
     {
-        rb.velocity = m_speed * Time.fixedDeltaTime * Vector3.forward;
+        if (m_isRunning) rb.velocity = m_speed * Time.fixedDeltaTime * Vector3.forward;
+        else rb.velocity = Vector3.zero;
+
         Move();
+    }
+
+    private void Update()
+    {
+        m_speed += Time.deltaTime * m_gameData.speedIncreasePerSec;
     }
 
     public void Move()
@@ -51,27 +72,52 @@ public class Runner : MonoBehaviour
 
     public void UpdateFollowers()
     {
-        if (m_followers.Count > m_amount + 1)
+        if (m_amount <= 0)
         {
-            int iterations = m_followers.Count - m_amount + 1;
-            for (int i = 0; i < iterations; i++)
-            {
-                Destroy(m_followers[0].gameObject);
-                m_followers.RemoveAt(0);
-            }
+            // Die
+            Die();
         }
-        else if (m_followers.Count < m_amount + 1)
+        else
         {
-            int iterations = m_amount + 1 - m_followers.Count;
-            for (int i = 0; i < iterations; i++)
+            if (m_followers.Count > m_amount + 1)
             {
-                Follower follower = Instantiate(m_followerPrefab, transform.position, Quaternion.identity).GetComponent<Follower>();
-                follower.transform.SetParent(m_followerParent);
-                m_followers.Add(follower);
-                follower.m_runner = this;
+                int iterations = m_followers.Count - m_amount + 1;
+                for (int i = 0; i < iterations; i++)
+                {
+                    Destroy(m_followers[0].gameObject);
+                    m_followers.RemoveAt(0);
+                }
+            }
+            else if (m_followers.Count < m_amount + 1)
+            {
+                int iterations = m_amount + 1 - m_followers.Count;
+                for (int i = 0; i < iterations; i++)
+                {
+                    if (m_followers.Count < 15)
+                    {
+                        Follower follower = Instantiate(m_followerPrefab, transform.position, Quaternion.identity).GetComponent<Follower>();
+                        follower.transform.SetParent(m_followerParent);
+                        m_followers.Add(follower);
+                        follower.m_runner = this;
+                    }
+                }
             }
         }
 
-        m_amountDisplay.text = m_amount.ToString();
+        UpdateValueDisplay();
     }
+
+    void Die()
+    {
+        // Update highscore
+        if (PlayerPrefs.GetInt("Highscore") < m_currentScore)
+        {
+            // New highscore!
+            PlayerPrefs.SetInt("Highscore", m_currentScore);
+        }
+
+        // Show UI
+    }
+
+    public void UpdateValueDisplay() => m_amountDisplay.text = m_amount.ToString();
 }
