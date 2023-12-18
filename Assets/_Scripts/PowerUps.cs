@@ -14,16 +14,16 @@ public enum PowerTypes
 public class PowerUps : MonoBehaviour
 {
     public PowerTypes powerType;
+    private float timer = 0f;
     [SerializeField] float powerUpDuration;
     [SerializeField] float regenRate;
     [SerializeField] float resilienceRate;
     [SerializeField] float numMultipler;
-    [SerializeField] GameObject playerShield;
     bool hasShield;
     bool hasRegen;
     bool hasResilence;
     bool hasExtraMulti;
-
+    bool isLooping;
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.tag == "GameController")
@@ -38,13 +38,9 @@ public class PowerUps : MonoBehaviour
     {
         switch (powerType)
         {
-            case PowerTypes.Shield:
-                {
-                    GainShield();
-                    break;
-                }
             case PowerTypes.ExtraMultipler:
                 {
+                    hasRegen = true;
                     GainExtraMultiplier();
                     break;
                 }
@@ -63,22 +59,19 @@ public class PowerUps : MonoBehaviour
 
     private void GainResilence()
     {
+        //When entering negative (divide or subtraction) gate, lose less amount instead of full
         hasResilence = true;
     }
 
     private void GainRegeneration()
     {
-        hasRegen = true;
+       // Regains small amount of number for few seconds
     }
 
     private void GainExtraMultiplier()
     {
+        //Gain extra numbers when entering the gate
         hasExtraMulti = true;
     }
 
-    private void GainShield()
-    {
-        hasShield = true;
-        playerShield.SetActive(true);
-    }
 }
