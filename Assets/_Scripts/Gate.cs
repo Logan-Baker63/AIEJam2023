@@ -14,5 +14,5 @@ public class Gate : MonoBehaviour
 {
     [SerializeField] GateType m_type;
 
-
+    [SerializeField] float m_changeAmount;
 }
