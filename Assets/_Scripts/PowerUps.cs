@@ -14,7 +14,10 @@ public enum PowerTypes
 public class PowerUps : MonoBehaviour
 {
     public PowerTypes powerType;
-    [SerializeField] float powerUpDuration = 5f;
+    [SerializeField] float powerUpDuration;
+    [SerializeField] float regenRate;
+    [SerializeField] float resilienceRate;
+    [SerializeField] float numMultipler;
     bool hasShield;
     bool hasRegen;
     bool hasResilence;
@@ -59,20 +62,24 @@ public class PowerUps : MonoBehaviour
     private void GainResilence()
     {
         throw new NotImplementedException();
+        hasResilence = true;
     }
 
     private void GainRegeneration()
     {
         throw new NotImplementedException();
+        hasRegen = true;
     }
 
     private void GainExtraMultiplier()
     {
         throw new NotImplementedException();
+        hasExtraMulti = true;
     }
 
     private void GainShield()
     {
         throw new NotImplementedException();
+        hasShield = true;
     }
 }
