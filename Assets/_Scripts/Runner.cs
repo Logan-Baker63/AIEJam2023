@@ -18,7 +18,7 @@ public class Runner : MonoBehaviour
         set 
         { 
             m_amount = value;
-            m_highscore += value;
+            m_currentScore += value;
         } 
     }
 
@@ -33,7 +33,7 @@ public class Runner : MonoBehaviour
     bool m_isRunning = true;
     public bool isRunning { get { return m_isRunning; } set { m_isRunning = value; } }
 
-    int m_highscore;
+    int m_currentScore;
 
     GameData m_gameData;
 
@@ -75,7 +75,13 @@ public class Runner : MonoBehaviour
         if (m_amount <= 0)
         {
             // Die
-            PlayerPrefs.SetInt("Highscore", m_highscore);
+
+            // Update highscore
+            if (PlayerPrefs.GetInt("Highscore") < m_currentScore)
+            {
+                // New highscore!
+                PlayerPrefs.SetInt("Highscore", m_currentScore);
+            }
         }
         else
         {
