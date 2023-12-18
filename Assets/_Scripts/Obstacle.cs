@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -9,7 +10,12 @@ public class Obstacle : MonoBehaviour
     [SerializeField] [ConditionalHide("m_randomizeHealth", Inverse = true)] int m_health = 100;
     [SerializeField] [ConditionalHide("m_randomizeHealth")] int m_minHealth = 10, m_maxHealth = 100;
 
+    public int health { get { return m_health; } }
+    public int maxHealth { get { return m_maxHealth; } }    
+
     Runner m_runner;
+
+    public Action onDamaged;
 
     TextMeshPro m_valueDisplay;
 
@@ -21,7 +27,7 @@ public class Obstacle : MonoBehaviour
         m_runner = FindObjectOfType<Runner>();
         m_valueDisplay = GetComponentInChildren<TextMeshPro>();
 
-        if (m_randomizeHealth) m_health = Random.Range(m_minHealth, m_maxHealth);
+        if (m_randomizeHealth) m_health = UnityEngine.Random.Range(m_minHealth, m_maxHealth);
         UpdateValueDisplay();
 
         m_originalHealth = m_health;
@@ -41,6 +47,8 @@ public class Obstacle : MonoBehaviour
             m_runner.UpdateValueDisplay();
             Destroy(gameObject);
         }
+
+        onDamaged?.Invoke();
     }
 
     public void UpdateValueDisplay() => m_valueDisplay.text = m_health.ToString();
