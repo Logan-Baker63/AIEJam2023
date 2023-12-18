@@ -20,8 +20,11 @@ public class CollisionDetector : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        AddToList(other);
-        onTriggerEnter?.Invoke(other);
+        if (m_tagFilter.Contains(other.tag))
+        {
+            AddToList(other);
+            onTriggerEnter?.Invoke(other);
+        }
     }
     private void OnTriggerStay(Collider other) => onTriggerStay?.Invoke(other);
     private void OnTriggerExit(Collider other)
@@ -31,8 +34,11 @@ public class CollisionDetector : MonoBehaviour
     }
     void OnCollisionEnter(Collision other)
     {
-        AddToList(other.collider);
-        onCollisionEnter?.Invoke(other);
+        if (m_tagFilter.Contains(other.gameObject.tag))
+        {
+            AddToList(other.collider);
+            onCollisionEnter?.Invoke(other);
+        }
     }
     public void OnCollisionStay(Collision other) => onCollisionStay?.Invoke(other);
     private void OnCollisionExit(Collision other)
@@ -41,13 +47,6 @@ public class CollisionDetector : MonoBehaviour
         onCollisionExit?.Invoke(other);
     }
 
-    void AddToList(Collider collider)
-    {
-        if (m_tagFilter.Contains(collider.tag))
-        {
-            if (!m_objectsInCollider.Contains(collider.gameObject)) m_objectsInCollider.Add(collider.gameObject);
-        }
-    }
-
+    void AddToList(Collider collider) { if (!m_objectsInCollider.Contains(collider.gameObject)) m_objectsInCollider.Add(collider.gameObject); }
     void RemoveFromList(Collider collider) { if (m_objectsInCollider.Contains(collider.gameObject)) m_objectsInCollider.Remove(collider.gameObject); }
 }
