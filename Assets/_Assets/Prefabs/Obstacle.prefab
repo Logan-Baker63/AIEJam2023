@@ -237,6 +237,7 @@ GameObject:
   - component: {fileID: 8383853728587602910}
   - component: {fileID: 9006097778928000006}
   - component: {fileID: 1360669921473669436}
+  - component: {fileID: 3113883589766685305}
   m_Layer: 0
   m_Name: HealthDisplay
   m_TagString: Untagged
@@ -398,6 +399,19 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_renderer: {fileID: 9006097778928000006}
   m_maskType: 0
+--- !u!114 &3113883589766685305
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6244506071916536055}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5afb6eaee6798cc4184f01eaab941cef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_invert: 1
 --- !u!1001 &8168065331166378511
 PrefabInstance:
   m_ObjectHideFlags: 0
