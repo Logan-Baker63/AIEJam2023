@@ -45,7 +45,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_spawnables:
-  - m_prefab: {fileID: 2316804844155969637, guid: cf221f18ae1c56042983601a03bbd4ba,
+  - m_prefab: {fileID: 377203705788837394, guid: de0ba7c0f58e8ff47a94621e57258ef6,
       type: 3}
     m_spawnWeight: 1
 --- !u!1 &1414102541700222070
@@ -141,7 +141,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_spawnables:
-  - m_prefab: {fileID: 2316804844155969637, guid: 02d9711ff492a5d44ba03dd3fbcd36c3,
+  - m_prefab: {fileID: 4128502105218797353, guid: a166c135afd0426409ee5c85ebdf099f,
       type: 3}
     m_spawnWeight: 1
 --- !u!1 &4767140690204532560
@@ -189,7 +189,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_spawnables:
-  - m_prefab: {fileID: 2316804844155969637, guid: cf221f18ae1c56042983601a03bbd4ba,
+  - m_prefab: {fileID: 377203705788837394, guid: de0ba7c0f58e8ff47a94621e57258ef6,
       type: 3}
     m_spawnWeight: 1
 --- !u!1 &6196852368878837156
@@ -285,7 +285,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_spawnables:
-  - m_prefab: {fileID: 2316804844155969637, guid: 02d9711ff492a5d44ba03dd3fbcd36c3,
+  - m_prefab: {fileID: 4128502105218797353, guid: a166c135afd0426409ee5c85ebdf099f,
       type: 3}
     m_spawnWeight: 1
 --- !u!1 &8311040785431244874
