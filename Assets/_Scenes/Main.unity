@@ -199,7 +199,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_spawnables:
-  - m_prefab: {fileID: 2316804844155969637, guid: cf221f18ae1c56042983601a03bbd4ba,
+  - m_prefab: {fileID: 377203705788837394, guid: de0ba7c0f58e8ff47a94621e57258ef6,
       type: 3}
     m_spawnWeight: 2
 --- !u!1 &330585543
@@ -944,6 +944,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4935536446885515565, guid: e8e4ef9e27ef27c439c3f14d98dc3a95,
+        type: 3}
+      propertyPath: m_speed
+      value: 2000
       objectReference: {fileID: 0}
     - target: {fileID: 4935536446885515565, guid: e8e4ef9e27ef27c439c3f14d98dc3a95,
         type: 3}
