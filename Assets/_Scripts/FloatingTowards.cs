@@ -6,8 +6,17 @@ public class FloatingTowards : MonoBehaviour
     // The target marker.
     public Transform target;
 
+    public float minSpeed = 10f;
+    public float maxSpeed = 50f;
+
+
     // Speed in units per sec.
-    public float speed;
+    private float speed;
+
+    private void Start()
+    {
+        speed = Random.Range(minSpeed, maxSpeed);
+    }
 
     void Update()
     {
