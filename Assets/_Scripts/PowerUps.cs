@@ -18,6 +18,7 @@ public class PowerUps : MonoBehaviour
     [SerializeField] float regenRate;
     [SerializeField] float resilienceRate;
     [SerializeField] float numMultipler;
+    [SerializeField] GameObject playerShield;
     bool hasShield;
     bool hasRegen;
     bool hasResilence;
@@ -25,10 +26,11 @@ public class PowerUps : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player"))
+        if (other.gameObject.tag == "GameController")
         {
             GainPowerUp(other.gameObject);
             gameObject.SetActive(false);
+            Debug.Log("touched");
         }
     }
 
@@ -61,25 +63,22 @@ public class PowerUps : MonoBehaviour
 
     private void GainResilence()
     {
-        throw new NotImplementedException();
         hasResilence = true;
     }
 
     private void GainRegeneration()
     {
-        throw new NotImplementedException();
         hasRegen = true;
     }
 
     private void GainExtraMultiplier()
     {
-        throw new NotImplementedException();
         hasExtraMulti = true;
     }
 
     private void GainShield()
     {
-        throw new NotImplementedException();
         hasShield = true;
+        playerShield.SetActive(true);
     }
 }
