@@ -13,7 +13,7 @@ public class AudioManager : MonoBehaviour
 
     public AudioGroupDetails[] audioGroups;
 
-    [SerializeField] private Slider musicSlider, sfxSlider; //masterSlider;
+    //[SerializeField] private Slider musicSlider, sfxSlider; //masterSlider;
 
     private void Awake()
     {
@@ -31,8 +31,8 @@ public class AudioManager : MonoBehaviour
     private void Start()
     {
         PlayMusic("Music");
-        MusicVolume(musicSlider.value);
-        SFXVolume(sfxSlider.value);
+        //MusicVolume(musicSlider.value);
+        //SFXVolume(sfxSlider.value);
     }
 
     public void PlayMusic(string name)
@@ -93,6 +93,6 @@ public class AudioManager : MonoBehaviour
 
     public void ToggleMusic() { musicSource.mute = !musicSource.mute; }
     public void ToggleSFX() { sfxSource.mute = !sfxSource.mute; }
-    public void MusicVolume(float volume) { volume = musicSlider.value; musicSource.volume = volume; }
-    public void SFXVolume(float volume) { volume = sfxSlider.value; sfxSource.volume = volume; }
+    //public void MusicVolume(float volume) { volume = musicSlider.value; musicSource.volume = volume; }
+    //public void SFXVolume(float volume) { volume = sfxSlider.value; sfxSource.volume = volume; }
 }
