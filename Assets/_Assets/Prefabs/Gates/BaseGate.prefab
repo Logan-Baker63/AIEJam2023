@@ -217,7 +217,7 @@ MonoBehaviour:
   m_randomizeAmount: 1
   m_minRange: 1
   m_maxRange: 100
-  m_changeAmount: 71
+  m_changeAmount: 57
 --- !u!1 &3508726829217100445
 GameObject:
   m_ObjectHideFlags: 0
@@ -516,7 +516,7 @@ MeshRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 10
   m_AdditionalVertexStreams: {fileID: 0}
 --- !u!114 &7052149180991556817
 MonoBehaviour:
@@ -538,7 +538,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: +71
+  m_text: +57
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: c0c83518442b41c498bae94304c7c0ec, type: 2}
   m_sharedMaterial: {fileID: -8493022043472307215, guid: c0c83518442b41c498bae94304c7c0ec,
