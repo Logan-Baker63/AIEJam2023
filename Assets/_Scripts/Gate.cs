@@ -55,6 +55,7 @@ public class Gate : MonoBehaviour
     public void OnColliderEnter(Collider other)
     {
         CalculateNewRunnerAmount();
+        AudioManager.Instance.PlaySFX("test");
     }
 
     void CalculateNewRunnerAmount()

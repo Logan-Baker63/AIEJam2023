@@ -1189,7 +1189,7 @@ PrefabInstance:
     - target: {fileID: 2399611521113166962, guid: c2a43d24360a54b4bb5ca148f5a0e4dd,
         type: 3}
       propertyPath: sfxAudio.Array.size
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2399611521113166962, guid: c2a43d24360a54b4bb5ca148f5a0e4dd,
         type: 3}
@@ -1211,7 +1211,7 @@ PrefabInstance:
         type: 3}
       propertyPath: sfxAudio.Array.data[0].clip
       value: 
-      objectReference: {fileID: 8300000, guid: d0d8bfe2fcdbfc5488548326ae27f7f8, type: 3}
+      objectReference: {fileID: 8300000, guid: 59f3f13402494f347b3fc1b3ad0200d7, type: 3}
     - target: {fileID: 2399611521113166962, guid: c2a43d24360a54b4bb5ca148f5a0e4dd,
         type: 3}
       propertyPath: musicAudio.Array.data[0].clip
@@ -1220,7 +1220,7 @@ PrefabInstance:
     - target: {fileID: 2399611521113166962, guid: c2a43d24360a54b4bb5ca148f5a0e4dd,
         type: 3}
       propertyPath: sfxAudio.Array.data[0].audioName
-      value: +
+      value: test
       objectReference: {fileID: 0}
     - target: {fileID: 2399611521113166962, guid: c2a43d24360a54b4bb5ca148f5a0e4dd,
         type: 3}
