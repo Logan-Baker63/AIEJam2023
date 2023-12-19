@@ -42,8 +42,10 @@ public class Runner : MonoBehaviour
 
     bool m_isDead;
 
-    [SerializeField] float m_followerScaleIncreaseMulti = 0.1f;
+    [SerializeField] float m_followerScaleIncreaseMulti = 0.025f;
     [SerializeField] List<Transform> m_followerPoints;
+
+    [SerializeField] float m_maxFollowerScale = 20;
 
     PowerUps m_powerUps;
 
@@ -127,7 +129,9 @@ public class Runner : MonoBehaviour
 
             foreach (Follower follower in m_followers)
             {
-                follower.transform.localScale = Vector3.one * scaleMulti;
+                Vector3 newScale = Vector3.one * scaleMulti;
+                if (newScale.x > m_maxFollowerScale) follower.transform.localScale = Vector3.one * m_maxFollowerScale;
+                else follower.transform.localScale = newScale;
             }
         }
 
