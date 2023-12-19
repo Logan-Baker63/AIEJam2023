@@ -4,9 +4,9 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - Net
-  - Random
   - PowerUp
+  - Pooletts
+  - SkibidiToilet
   layers:
   - Default
   - TransparentFX

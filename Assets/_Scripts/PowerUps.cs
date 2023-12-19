@@ -55,5 +55,6 @@ public class PowerUps : MonoBehaviour
         GameObject projectile = Instantiate(projectilePrefab, transform.position + transform.forward, transform.rotation);
         Rigidbody rb = projectile.GetComponent<Rigidbody>();
         rb.velocity = transform.forward * projectileSpeed;
+        Destroy(projectile, 5);
     }
 }

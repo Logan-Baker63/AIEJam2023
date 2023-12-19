@@ -23,6 +23,9 @@ public class Obstacle : MonoBehaviour
     [SerializeField] float m_healthRewardMultiplier = 1.5f;
 
     [SerializeField] float m_destructionPerSec = 1;
+    //[SerializeField] float m_destructionPerBullet = 10;
+
+    [SerializeField] int m_bulletDmg = 5;
 
     private void Awake()
     {
@@ -35,23 +38,37 @@ public class Obstacle : MonoBehaviour
         m_originalHealth = (int)m_health;
     }
 
-    public void Damage()
+    public void Damage(Collider _collider)
     {
-        m_health -= Time.fixedDeltaTime * m_destructionPerSec;
-        UpdateValueDisplay();
-
-        m_runner.amount -= Time.fixedDeltaTime * m_destructionPerSec;
-        m_runner.UpdateFollowers();
-
-        if (m_health <= 0)
+        if (_collider.CompareTag("Player"))
         {
-            m_runner.amount += (int)(m_originalHealth * m_healthRewardMultiplier);
-            m_runner.UpdateValueDisplay();
-            Destroy(gameObject);
+            m_health -= Time.fixedDeltaTime * m_destructionPerSec;
+            UpdateValueDisplay();
+
+            m_runner.amount -= Time.fixedDeltaTime * m_destructionPerSec;
+            m_runner.UpdateFollowers();
+
+            if (m_health <= 0)
+            {
+                m_runner.amount += (int)(m_originalHealth * m_healthRewardMultiplier);
+                m_runner.UpdateValueDisplay();
+                Destroy(gameObject);
+            }
+
+            onDamaged?.Invoke();
         }
-
-        onDamaged?.Invoke();
     }
+    public void BulletDamage(Collider _collider)
+    {
+        if (_collider.CompareTag("Pooletts"))
+        {
+            m_health -= m_bulletDmg;
+            UpdateValueDisplay();
 
+            if (m_health <= 0) Destroy(gameObject);
+
+            onDamaged?.Invoke();
+        }
+    }
     public void UpdateValueDisplay() => m_valueDisplay.text = health.ToString();
 }
