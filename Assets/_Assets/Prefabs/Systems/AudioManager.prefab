@@ -303,8 +303,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   musicAudio: []
-  sfxAudio: []
+  sfxAudio:
+  - audioName: test
+    clip: {fileID: 8300000, guid: 59f3f13402494f347b3fc1b3ad0200d7, type: 3}
   musicSource: {fileID: 2399611519492295238}
   sfxSource: {fileID: 2399611520814747960}
   audioGroups:
   - {fileID: 11400000, guid: 69e208c55edc30542a9fb6bb8a9bcead, type: 2}
+  - {fileID: 11400000, guid: 5074011e6b1d3374f85c4ba186d07e19, type: 2}
