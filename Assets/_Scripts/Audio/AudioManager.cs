@@ -13,8 +13,6 @@ public class AudioManager : MonoBehaviour
 
     public AudioGroupDetails[] audioGroups;
 
-    //[SerializeField] private Slider musicSlider, sfxSlider; //masterSlider;
-
     private void Awake()
     {
         if (Instance == null)
@@ -26,15 +24,6 @@ public class AudioManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
-    }
-
-    private void Start()
-    {
-        //PlayMusic("Music");
-        //MusicVolume(musicSlider.value);
-        //SFXVolume(sfxSlider.value);
-        
-        
     }
 
     public void PlayMusic(string name)
@@ -55,7 +44,7 @@ public class AudioManager : MonoBehaviour
     {
         AudioDetails audio = Array.Find(sfxAudio, x => x.audioName == name);
         if (audio == null) { Debug.Log("Audio not found"); }
-        if (sfxSource.isPlaying) return;
+       // if (sfxSource.isPlaying) return;
         else
         {
             sfxSource.clip = audio.clip;
@@ -95,6 +84,4 @@ public class AudioManager : MonoBehaviour
 
     public void ToggleMusic() { musicSource.mute = !musicSource.mute; }
     public void ToggleSFX() { sfxSource.mute = !sfxSource.mute; }
-    //public void MusicVolume(float volume) { volume = musicSlider.value; musicSource.volume = volume; }
-    //public void SFXVolume(float volume) { volume = sfxSlider.value; sfxSource.volume = volume; }
 }

@@ -23,6 +23,8 @@ public class Gate : MonoBehaviour
 
     TextMeshPro m_display;
 
+    private string _sfxName;
+
     private void Awake()
     {
         m_runner = FindObjectOfType<Runner>();
@@ -55,6 +57,8 @@ public class Gate : MonoBehaviour
     public void OnColliderEnter(Collider other)
     {
         CalculateNewRunnerAmount();
+        SetGateTypeSFX();
+        AudioManager.Instance.PlaySFX(_sfxName);
     }
 
     void CalculateNewRunnerAmount()
@@ -69,5 +73,13 @@ public class Gate : MonoBehaviour
         m_runner.amount = (int)currAmt;
 
         m_runner.UpdateFollowers();
+    }
+
+    void SetGateTypeSFX()
+    {
+        if (m_type == GateType.Addition) _sfxName = "add";
+        else if (m_type == GateType.Subtraction) _sfxName = "sub";
+        else if (m_type == GateType.Multiplication) _sfxName = "mult";
+        else if (m_type == GateType.Division) _sfxName = "div";
     }
 }
