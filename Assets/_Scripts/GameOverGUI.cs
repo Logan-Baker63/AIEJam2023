@@ -73,4 +73,11 @@ public class GameOverGUI : MonoBehaviour
         Time.timeScale = 1;
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
+
+    public static void QuitGame()
+    {
+        Debug.Log("'Oooh Roo");
+        Application.Quit();
+ 
+    }
 }
