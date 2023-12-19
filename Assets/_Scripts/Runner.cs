@@ -72,6 +72,11 @@ public class Runner : MonoBehaviour
     {
         m_speed += Time.deltaTime * m_gameData.speedIncreasePerSec;
         //AudioManager.Instance.PlayGroupAudio("WalkingSFX2");
+
+        if(Input.GetKeyDown(KeyCode.PageDown))
+        {
+            PlayerPrefs.SetInt("Highscore", 0);
+        }
     }
 
     public void Move()

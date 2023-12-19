@@ -56,12 +56,12 @@ public class GameOverGUI : MonoBehaviour
         _scoreText.text = currentScore.ToString();
         _highScoreText.text = highScore.ToString();
 
-        if(currentScore > highScore)
+        if(currentScore >= highScore)
         {
             _winImage.SetActive(true);
             _failImage.SetActive(false);
         }
-        else if(currentScore <= highScore)
+        else if(currentScore < highScore)
         {
             _winImage.SetActive(false);
             _failImage.SetActive(true);

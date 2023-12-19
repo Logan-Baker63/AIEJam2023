@@ -808,8 +808,10 @@ MonoBehaviour:
     m_weight: 1
   m_chunks:
   - {fileID: 1242087594}
-  m_miniBossChunk: {fileID: 0}
-  m_bossChunk: {fileID: 0}
+  m_miniBossChunk: {fileID: 5591449606091794791, guid: 7a24ab8ee4b910746a02bd4dfe2223ea,
+    type: 3}
+  m_bossChunk: {fileID: 5591449606091794791, guid: acfa8533cb348664fa567c676c2f077c,
+    type: 3}
   m_miniBossFrequency: 10
   m_bossFrequency: 40
 --- !u!4 &1242087593 stripped
