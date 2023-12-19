@@ -304,10 +304,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   musicAudio: []
   sfxAudio:
-  - audioName: test
+  - audioName: add
     clip: {fileID: 8300000, guid: 59f3f13402494f347b3fc1b3ad0200d7, type: 3}
+  - audioName: div
+    clip: {fileID: 8300000, guid: aa32dee47a661f74e930502073769a3c, type: 3}
+  - audioName: mult
+    clip: {fileID: 8300000, guid: f05001dcc8304184c980532daba99bc8, type: 3}
+  - audioName: sub
+    clip: {fileID: 8300000, guid: 32fd24c78a588724f81f0691e2ba0500, type: 3}
+  - audioName: win
+    clip: {fileID: 8300000, guid: 6079a7f4afed82d448a1673d4b7dd88a, type: 3}
+  - audioName: fail
+    clip: {fileID: 8300000, guid: 12500b65308dbd343926f17a27c0b35c, type: 3}
+  - audioName: pickup
+    clip: {fileID: 8300000, guid: 5049dd1fb6735bf49a22eae064c1def2, type: 3}
   musicSource: {fileID: 2399611519492295238}
   sfxSource: {fileID: 2399611520814747960}
   audioGroups:
   - {fileID: 11400000, guid: 69e208c55edc30542a9fb6bb8a9bcead, type: 2}
   - {fileID: 11400000, guid: 5074011e6b1d3374f85c4ba186d07e19, type: 2}
+  - {fileID: 11400000, guid: 6a9b6aa966d801f4ca8e2b75cf0dafd5, type: 2}

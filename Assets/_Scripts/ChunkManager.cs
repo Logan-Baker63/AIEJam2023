@@ -94,11 +94,11 @@ public class ChunkManager : MonoBehaviour
 
     void ShiftLevelBack()
     {
+
         foreach (Transform child in transform)
         {
             child.position = new Vector3(child.position.x, child.position.y, child.position.z - m_chunkSize);
         }
-
         m_lastChunkPosZ -= m_chunkSize;
     }
 }
