@@ -56,8 +56,10 @@ MonoBehaviour:
   m_minHealth: 250
   m_maxHealth: 500
   m_healthRewardMultiplier: 0
+  m_shotRewardMultiplier: 0.5
   m_destructionPerSec: 125
   m_bulletDmg: 5
+  m_rewardPowerup: 0
 --- !u!65 &4919927475262534785
 BoxCollider:
   m_ObjectHideFlags: 0
