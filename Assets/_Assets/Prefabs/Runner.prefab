@@ -535,7 +535,7 @@ MonoBehaviour:
   m_followerPrefab: {fileID: 8197594691602936710, guid: 79894619ff9813649af61eb7541a70ec,
     type: 3}
   m_moveLimit: 5.5
-  m_followerScaleIncreaseMulti: 0.1
+  m_followerScaleIncreaseMulti: 0.05
   m_followerPoints:
   - {fileID: 1715475678}
   - {fileID: 449689108}
