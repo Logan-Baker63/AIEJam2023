@@ -50,9 +50,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_runner: {fileID: 0}
-  m_followDistance: -2
-  m_randRangeX: 2
-  m_speed: 44
 --- !u!33 &8197594691602936709
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -147,17 +144,17 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 4b7c07449db4c8b4f81c0ef23cb2cd57,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.19923602
+      value: 0.08653019
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 4b7c07449db4c8b4f81c0ef23cb2cd57,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.19923602
+      value: 0.08653019
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 4b7c07449db4c8b4f81c0ef23cb2cd57,
         type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.19923602
+      value: 0.08653019
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 4b7c07449db4c8b4f81c0ef23cb2cd57,
         type: 3}
@@ -167,7 +164,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 4b7c07449db4c8b4f81c0ef23cb2cd57,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 4b7c07449db4c8b4f81c0ef23cb2cd57,
         type: 3}

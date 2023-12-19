@@ -39,11 +39,23 @@ public class Runner : MonoBehaviour
 
     bool m_isDead;
 
+    [SerializeField] float m_followerScaleIncreaseMulti = 0.1f;
+    [SerializeField] List<Transform> m_followerPoints;
+
     private void Awake()
     {
         rb = GetComponent<Rigidbody>();
         m_amountDisplay = GetComponentInChildren<TextMeshPro>();
         m_gameData = FindObjectOfType<GameData>();
+
+        // Spawns followers
+        for (int i = 0; i < m_followerPoints.Count; i++)
+        {
+            Follower follower = Instantiate(m_followerPrefab, m_followerPoints[i].position, Quaternion.identity).GetComponent<Follower>();
+            follower.transform.SetParent(m_followerPoints[i]);
+            m_followers.Add(follower);
+            follower.m_runner = this;
+        }
 
         UpdateValueDisplay();
     }
@@ -82,31 +94,12 @@ public class Runner : MonoBehaviour
         }
         else
         {
-            if (m_followers.Count > m_amount + 1)
+            int followerCap = m_followerPoints.Count;
+            float scaleMulti = ((int)(m_amount / followerCap) * m_followerScaleIncreaseMulti) + 1;
+
+            foreach (Follower follower in m_followers)
             {
-                int iterations = m_followers.Count - (int)m_amount + 1;
-                for (int i = 0; i < iterations; i++)
-                {
-                    if (m_followers.Count >= 1)
-                    {
-                        Destroy(m_followers[0].gameObject);
-                        m_followers.RemoveAt(0);
-                    }
-                }
-            }
-            else if (m_followers.Count < m_amount + 1)
-            {
-                int iterations = (int)m_amount + 1 - m_followers.Count;
-                for (int i = 0; i < iterations; i++)
-                {
-                    if (m_followers.Count < 15)
-                    {
-                        Follower follower = Instantiate(m_followerPrefab, transform.position, Quaternion.identity).GetComponent<Follower>();
-                        follower.transform.SetParent(m_followerParent);
-                        m_followers.Add(follower);
-                        follower.m_runner = this;
-                    }
-                }
+                follower.transform.localScale = Vector3.one * scaleMulti;
             }
         }
 
@@ -118,7 +111,7 @@ public class Runner : MonoBehaviour
         Time.timeScale = 0;
 
         // Update highscore
-        if (PlayerPrefs.GetInt("Highscore") < m_currentScore)
+        if (PlayerPrefs.GetInt("Highscore") < (int)m_currentScore)
         {
             // New highscore!
             PlayerPrefs.SetInt("Highscore", (int)m_currentScore);
@@ -129,5 +122,5 @@ public class Runner : MonoBehaviour
         GameOverGUI.Instance.DisplayGameOverGUI((int)m_currentScore, highScore);
     }
 
-    public void UpdateValueDisplay() => m_amountDisplay.text = m_amount.ToString();
+    public void UpdateValueDisplay() => m_amountDisplay.text = ((int)m_amount).ToString();
 }
