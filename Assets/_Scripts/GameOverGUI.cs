@@ -78,7 +78,6 @@ public class GameOverGUI : MonoBehaviour
 
     public static void QuitGame()
     {
-        Debug.Log("'Oooh Roo");
         Application.Quit();
  
     }
