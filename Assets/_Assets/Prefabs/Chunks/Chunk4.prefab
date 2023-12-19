@@ -48,6 +48,9 @@ MonoBehaviour:
   - m_prefab: {fileID: 377203705788837394, guid: de0ba7c0f58e8ff47a94621e57258ef6,
       type: 3}
     m_spawnWeight: 1
+  m_isTeleporter: 0
+  m_teleportPerSec: 1
+  m_teleportOffset: {x: 0, y: 0, z: 0}
 --- !u!1 &1414102541700222070
 GameObject:
   m_ObjectHideFlags: 0
@@ -96,6 +99,9 @@ MonoBehaviour:
   - m_prefab: {fileID: 4919927475262534798, guid: 326ac0344c3128a44a9b1d95416ba3a7,
       type: 3}
     m_spawnWeight: 1
+  m_isTeleporter: 0
+  m_teleportPerSec: 1
+  m_teleportOffset: {x: 0, y: 0, z: 0}
 --- !u!1 &4460287519802896440
 GameObject:
   m_ObjectHideFlags: 0
@@ -144,6 +150,9 @@ MonoBehaviour:
   - m_prefab: {fileID: 4128502105218797353, guid: a166c135afd0426409ee5c85ebdf099f,
       type: 3}
     m_spawnWeight: 1
+  m_isTeleporter: 0
+  m_teleportPerSec: 1
+  m_teleportOffset: {x: 0, y: 0, z: 0}
 --- !u!1 &4767140690204532560
 GameObject:
   m_ObjectHideFlags: 0
@@ -192,6 +201,9 @@ MonoBehaviour:
   - m_prefab: {fileID: 377203705788837394, guid: de0ba7c0f58e8ff47a94621e57258ef6,
       type: 3}
     m_spawnWeight: 1
+  m_isTeleporter: 0
+  m_teleportPerSec: 1
+  m_teleportOffset: {x: 0, y: 0, z: 0}
 --- !u!1 &6196852368878837156
 GameObject:
   m_ObjectHideFlags: 0
@@ -240,6 +252,9 @@ MonoBehaviour:
   - m_prefab: {fileID: 4919927475262534798, guid: 326ac0344c3128a44a9b1d95416ba3a7,
       type: 3}
     m_spawnWeight: 1
+  m_isTeleporter: 0
+  m_teleportPerSec: 1
+  m_teleportOffset: {x: 0, y: 0, z: 0}
 --- !u!1 &6775132336501580928
 GameObject:
   m_ObjectHideFlags: 0
@@ -291,6 +306,9 @@ MonoBehaviour:
   - m_prefab: {fileID: 377203705788837394, guid: 03efed9d980dd454e863a58c3de05ac7,
       type: 3}
     m_spawnWeight: 1
+  m_isTeleporter: 0
+  m_teleportPerSec: 1
+  m_teleportOffset: {x: 0, y: 0, z: 0}
 --- !u!1 &8311040785431244874
 GameObject:
   m_ObjectHideFlags: 0
@@ -339,6 +357,9 @@ MonoBehaviour:
   - m_prefab: {fileID: 4919927475262534798, guid: 326ac0344c3128a44a9b1d95416ba3a7,
       type: 3}
     m_spawnWeight: 1
+  m_isTeleporter: 0
+  m_teleportPerSec: 1
+  m_teleportOffset: {x: 0, y: 0, z: 0}
 --- !u!1 &8425712003899176876
 GameObject:
   m_ObjectHideFlags: 0
@@ -387,6 +408,9 @@ MonoBehaviour:
   - m_prefab: {fileID: 4919927475262534798, guid: 326ac0344c3128a44a9b1d95416ba3a7,
       type: 3}
     m_spawnWeight: 1
+  m_isTeleporter: 0
+  m_teleportPerSec: 1
+  m_teleportOffset: {x: 0, y: 0, z: 0}
 --- !u!1001 &4034308702948588486
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -394,6 +418,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3769505017365683928, guid: e5e96c2faad2e5a4888612b91e73dd38,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 4092054871350468903, guid: e5e96c2faad2e5a4888612b91e73dd38,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 4921602694122135128, guid: e5e96c2faad2e5a4888612b91e73dd38,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -402,7 +436,7 @@ PrefabInstance:
     - target: {fileID: 5127717703699638802, guid: e5e96c2faad2e5a4888612b91e73dd38,
         type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 6422610223352052338, guid: e5e96c2faad2e5a4888612b91e73dd38,
         type: 3}
@@ -473,7 +507,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 8d82bc651722b834daf1d6976e518965, type: 2}
+      objectReference: {fileID: 2100000, guid: a197c65ecab884344826651458562d60, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e5e96c2faad2e5a4888612b91e73dd38, type: 3}
 --- !u!4 &5591449606091794788 stripped
