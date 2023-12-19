@@ -25,7 +25,7 @@ PrefabInstance:
     - target: {fileID: 1362385444532984082, guid: 7ae44657e16249b4e9a3b1e9d41672d9,
         type: 3}
       propertyPath: m_changeAmount
-      value: 2.1
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 2316804844155969637, guid: 7ae44657e16249b4e9a3b1e9d41672d9,
         type: 3}
@@ -90,12 +90,12 @@ PrefabInstance:
     - target: {fileID: 7052149180991556817, guid: 7ae44657e16249b4e9a3b1e9d41672d9,
         type: 3}
       propertyPath: m_text
-      value: x2.1
+      value: x1.5
       objectReference: {fileID: 0}
     - target: {fileID: 7052149180991556817, guid: 7ae44657e16249b4e9a3b1e9d41672d9,
         type: 3}
       propertyPath: m_fontSize
-      value: 22.35
+      value: 22.15
       objectReference: {fileID: 0}
     - target: {fileID: 8738394024923038401, guid: 7ae44657e16249b4e9a3b1e9d41672d9,
         type: 3}
@@ -110,23 +110,13 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1832282738725941068}
   m_PrefabAsset: {fileID: 0}
---- !u!1001 &7222429227839340712
+--- !u!1001 &2123972334862943790
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 3160770279527723479}
     m_Modifications:
-    - target: {fileID: 209671819112431373, guid: 4dbe2c7df2f531e4c84bbd1bf459260c,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -1.28
-      objectReference: {fileID: 0}
-    - target: {fileID: 209671819112431378, guid: 4dbe2c7df2f531e4c84bbd1bf459260c,
-        type: 3}
-      propertyPath: moveWithTransform
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 6593485231096584049, guid: 4dbe2c7df2f531e4c84bbd1bf459260c,
         type: 3}
       propertyPath: m_Name
