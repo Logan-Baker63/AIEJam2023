@@ -6,7 +6,8 @@ using System.Collections;
 public class PowerUps : MonoBehaviour
 {
     public float powerUpDuration = 5f;
-    [SerializeField] GameObject projectilePrefab, launchPoint;
+    [SerializeField] List<GameObject> m_projectiles;
+    [SerializeField] GameObject launchPoint;
     [SerializeField] float projectileSpeed = 10f;
     [SerializeField] float shootingInterval = 0.1f;
     bool hasPowerUp = false;
@@ -58,11 +59,17 @@ public class PowerUps : MonoBehaviour
 
     private void Shoot()
     {
-        GameObject projectile = Instantiate(projectilePrefab, transform.position + transform.forward, transform.rotation);
+        GameObject projectile = Instantiate(GetRandomProjectile(), transform.position + transform.forward, transform.rotation);
         Rigidbody rb = projectile.GetComponent<Rigidbody>();
         rb.velocity = transform.forward * projectileSpeed;
         Destroy(projectile, 5);
     }
 
 
+
+    GameObject GetRandomProjectile()
+    {
+        int randIndex = UnityEngine.Random.Range(0, m_projectiles.Count);
+        return m_projectiles[randIndex];
+    }
 }
