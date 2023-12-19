@@ -16,17 +16,13 @@ public class PowerUps : MonoBehaviour
     {
         if (collision.gameObject.tag == "PowerUp")
         {
-
             collision.gameObject.SetActive(false);
 
-            //TODO: Shoot() repeatly until powerupDuration rans outs
-            StartCoroutine(ShootForDuration());
-            Debug.Log("Touched");
+            BeginShoot();
         }
     }
 
-
-
+    public void BeginShoot() => StartCoroutine(ShootForDuration());
 
     private IEnumerator ShootForDuration()
     {
