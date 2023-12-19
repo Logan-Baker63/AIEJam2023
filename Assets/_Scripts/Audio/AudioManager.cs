@@ -19,11 +19,18 @@ public class AudioManager : MonoBehaviour
         {
             Instance = this;
             DontDestroyOnLoad(gameObject);
+            
         }
         else
         {
             Destroy(gameObject);
         }
+        
+    }
+
+    private void Start()
+    {
+        
     }
 
     public void PlayMusic(string name)

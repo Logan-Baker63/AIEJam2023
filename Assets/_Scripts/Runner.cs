@@ -67,6 +67,7 @@ public class Runner : MonoBehaviour
         }
 
         UpdateValueDisplay();
+        
     }
 
     private void FixedUpdate()

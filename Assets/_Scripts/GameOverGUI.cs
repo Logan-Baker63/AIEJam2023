@@ -32,6 +32,7 @@ public class GameOverGUI : MonoBehaviour
         {
             Destroy(gameObject);
         }
+
     }
 
     void Init()
@@ -42,11 +43,14 @@ public class GameOverGUI : MonoBehaviour
         _failImage = _gameOverCanvas._failImage;
         _scoreText = _gameOverCanvas._scoreText;
         _highScoreText = _gameOverCanvas._highScoreText;
+
+        
     }
 
     void OnSceneLoaded(Scene _scene, Scene _scene2)
     {
         Init();
+       // AudioManager.Instance.PlayMusic("bgm");
     }
 
     public void DisplayGameOverGUI(int currentScore, int highScore)
