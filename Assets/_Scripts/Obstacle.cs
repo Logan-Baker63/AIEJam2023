@@ -48,6 +48,7 @@ public class Obstacle : MonoBehaviour
     {
         if (_collider.CompareTag("Player") )
         {
+            ParticlePos.Instance.PlayParticle(this.gameObject.transform);
            m_health -= Time.fixedDeltaTime * m_destructionPerSec;
            UpdateValueDisplay();
             if (!m_powerUp.isInvulnerable)
