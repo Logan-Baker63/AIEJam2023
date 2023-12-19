@@ -1,6 +1,9 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 using TMPro;
+using UnityEditor.Rendering;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -14,12 +17,12 @@ public class Runner : MonoBehaviour
     [SerializeField] float m_sideSpeed;
 
     [SerializeField] float m_amount;
-    public float amount { get { return m_amount; } 
-        set 
-        { 
+    public float amount { get { return m_amount; }
+        set
+        {
             m_amount = value;
             m_currentScore += value;
-        } 
+        }
     }
 
     public Transform m_followerParent;
@@ -42,11 +45,14 @@ public class Runner : MonoBehaviour
     [SerializeField] float m_followerScaleIncreaseMulti = 0.1f;
     [SerializeField] List<Transform> m_followerPoints;
 
+    PowerUps m_powerUps;
+
     private void Awake()
     {
         rb = GetComponent<Rigidbody>();
         m_amountDisplay = GetComponentInChildren<TextMeshPro>();
         m_gameData = FindObjectOfType<GameData>();
+        m_powerUps = GetComponent<PowerUps>();
 
         // Spawns followers
         for (int i = 0; i < m_followerPoints.Count; i++)
@@ -70,13 +76,30 @@ public class Runner : MonoBehaviour
 
     private void Update()
     {
-        m_speed += Time.deltaTime * m_gameData.speedIncreasePerSec;
+        if (!m_powerUps.isInvulnerable)
+        {
+            m_speed += Time.deltaTime * m_gameData.speedIncreasePerSec;
+        }
+        else
+        {
+            m_speed = 2000 + (Time.deltaTime * m_gameData.speedIncreasePerSec);
+            ResetSpeed();
+        }
+
         //AudioManager.Instance.PlayGroupAudio("WalkingSFX2");
 
-        if(Input.GetKeyDown(KeyCode.PageDown))
+        if (Input.GetKeyDown(KeyCode.PageDown))
         {
             PlayerPrefs.SetInt("Highscore", 0);
         }
+    }
+
+    private void ResetSpeed() => StartCoroutine(ResetPlayerSpeed());
+
+    private IEnumerator ResetPlayerSpeed()
+    {
+        yield return new WaitForSeconds(10);
+        m_speed = 1000 + (Time.deltaTime * m_gameData.speedIncreasePerSec);
     }
 
     public void Move()

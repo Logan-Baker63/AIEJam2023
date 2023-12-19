@@ -16,6 +16,8 @@ public class Obstacle : MonoBehaviour
     Runner m_runner;
 
     public Action onDamaged;
+   
+
 
     TextMeshPro m_valueDisplay;
 
@@ -34,7 +36,7 @@ public class Obstacle : MonoBehaviour
     {
         m_runner = FindObjectOfType<Runner>();
         m_valueDisplay = GetComponentInChildren<TextMeshPro>();
-        m_powerUp = GetComponent<PowerUps>();
+        m_powerUp = m_runner.GetComponent<PowerUps>();
 
         if (m_randomizeHealth) m_health = UnityEngine.Random.Range(m_minHealth, m_maxHealth);
         UpdateValueDisplay();
@@ -44,14 +46,18 @@ public class Obstacle : MonoBehaviour
 
     public void Damage(Collider _collider)
     {
-        if (_collider.CompareTag("Player"))
+        if (_collider.CompareTag("Player") )
         {
-            m_health -= Time.fixedDeltaTime * m_destructionPerSec;
-            UpdateValueDisplay();
+           m_health -= Time.fixedDeltaTime * m_destructionPerSec;
+           UpdateValueDisplay();
+            if (!m_powerUp.isInvulnerable)
+            {
+                Debug.Log("Is not invulnerable");
+                m_runner.amount -= Time.fixedDeltaTime * m_destructionPerSec;
+                m_runner.UpdateFollowers();
+            }
 
-            m_runner.amount -= Time.fixedDeltaTime * m_destructionPerSec;
-            m_runner.UpdateFollowers();
-
+         
             if (m_health <= 0)
             {
                 m_runner.amount += (int)(m_originalHealth * m_healthRewardMultiplier);
@@ -84,4 +90,6 @@ public class Obstacle : MonoBehaviour
         }
     }
     public void UpdateValueDisplay() => m_valueDisplay.text = health.ToString();
+
+
 }
