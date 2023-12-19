@@ -1725,8 +1725,58 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4935536446885515565, guid: e8e4ef9e27ef27c439c3f14d98dc3a95,
         type: 3}
+      propertyPath: m_moveLimit
+      value: 5.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4935536446885515565, guid: e8e4ef9e27ef27c439c3f14d98dc3a95,
+        type: 3}
       propertyPath: m_followerParent
       value: 
       objectReference: {fileID: 38401273}
+    - target: {fileID: 4935536446885515565, guid: e8e4ef9e27ef27c439c3f14d98dc3a95,
+        type: 3}
+      propertyPath: m_followerPoints.Array.size
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4935536446885515565, guid: e8e4ef9e27ef27c439c3f14d98dc3a95,
+        type: 3}
+      propertyPath: m_followerPoints.Array.data[0]
+      value: 
+      objectReference: {fileID: 1715475678}
+    - target: {fileID: 4935536446885515565, guid: e8e4ef9e27ef27c439c3f14d98dc3a95,
+        type: 3}
+      propertyPath: m_followerPoints.Array.data[1]
+      value: 
+      objectReference: {fileID: 449689108}
+    - target: {fileID: 4935536446885515565, guid: e8e4ef9e27ef27c439c3f14d98dc3a95,
+        type: 3}
+      propertyPath: m_followerPoints.Array.data[2]
+      value: 
+      objectReference: {fileID: 739454866}
+    - target: {fileID: 4935536446885515565, guid: e8e4ef9e27ef27c439c3f14d98dc3a95,
+        type: 3}
+      propertyPath: m_followerPoints.Array.data[3]
+      value: 
+      objectReference: {fileID: 1974983763}
+    - target: {fileID: 4935536446885515565, guid: e8e4ef9e27ef27c439c3f14d98dc3a95,
+        type: 3}
+      propertyPath: m_followerPoints.Array.data[4]
+      value: 
+      objectReference: {fileID: 762113723}
+    - target: {fileID: 4935536446885515565, guid: e8e4ef9e27ef27c439c3f14d98dc3a95,
+        type: 3}
+      propertyPath: m_followerPoints.Array.data[5]
+      value: 
+      objectReference: {fileID: 1127741656}
+    - target: {fileID: 4935536446885515565, guid: e8e4ef9e27ef27c439c3f14d98dc3a95,
+        type: 3}
+      propertyPath: m_followerPoints.Array.data[6]
+      value: 
+      objectReference: {fileID: 588816581}
+    - target: {fileID: 4935536446885515565, guid: e8e4ef9e27ef27c439c3f14d98dc3a95,
+        type: 3}
+      propertyPath: m_followerPoints.Array.data[7]
+      value: 
+      objectReference: {fileID: 747336409}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e8e4ef9e27ef27c439c3f14d98dc3a95, type: 3}
