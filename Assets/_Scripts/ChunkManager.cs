@@ -98,13 +98,6 @@ public class ChunkManager : MonoBehaviour
         {
             child.position = new Vector3(child.position.x, child.position.y, child.position.z - m_chunkSize);
         }
-
-        foreach(ParticleSystem ps in transform)
-        {
-            ps.Stop();
-            ps.Play();
-        }
-
         m_lastChunkPosZ -= m_chunkSize;
     }
 }
