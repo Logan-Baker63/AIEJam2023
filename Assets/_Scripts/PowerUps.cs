@@ -11,9 +11,9 @@ public class PowerUps : MonoBehaviour
     [SerializeField] float projectileSpeed = 10f;
     [SerializeField] float shootingInterval = 0.1f;
     bool hasPowerUp = false;
-    public float invulnerabilityDuration = 5.0f;
+    public float invulnerabilityDuration = 10.0f;
     public bool isInvulnerable = false;
-    Obstacle obstacle;
+    Runner runner;
 
     private void OnTriggerEnter(Collider collision)
     {
@@ -37,7 +37,6 @@ public class PowerUps : MonoBehaviour
     {
         isInvulnerable = true;
         yield return new WaitForSeconds(invulnerabilityDuration);
-        Debug.Log("can't touch me");
         isInvulnerable = false;
     }
 
