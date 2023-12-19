@@ -48,6 +48,4 @@ MonoBehaviour:
   _winImage: {fileID: 0}
   _failImage: {fileID: 0}
   _scoreText: {fileID: 0}
-  _hiScoreText: {fileID: 0}
-  _score: 12000
-  _hiScore: 7000
+  _highScoreText: {fileID: 0}
