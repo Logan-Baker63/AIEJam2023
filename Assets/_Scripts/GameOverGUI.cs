@@ -60,11 +60,13 @@ public class GameOverGUI : MonoBehaviour
         {
             _winImage.SetActive(true);
             _failImage.SetActive(false);
+            AudioManager.Instance.PlaySFX("win");
         }
         else if(currentScore < highScore)
         {
             _winImage.SetActive(false);
             _failImage.SetActive(true);
+            AudioManager.Instance.PlaySFX("fail");
         }
     }
 

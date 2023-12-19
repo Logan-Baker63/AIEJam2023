@@ -57,7 +57,7 @@ public class AudioManager : MonoBehaviour
     {
         AudioGroupDetails audio = Array.Find(audioGroups, x => x.audioGroupName == name);
         if (audio == null) { Debug.Log("Audio not found"); }
-        if (sfxSource.isPlaying) return;
+       // if (sfxSource.isPlaying) return;
         else
         {
             int randomVal = UnityEngine.Random.Range(0, audio.audioClips.Length);

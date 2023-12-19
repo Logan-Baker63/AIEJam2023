@@ -58,6 +58,7 @@ public class PowerUps : MonoBehaviour
 
     private void Shoot()
     {
+        AudioManager.Instance.PlayGroupAudio("PoopShoot");
         GameObject projectile = Instantiate(GetRandomProjectile(), transform.position + transform.forward, transform.rotation);
         Rigidbody rb = projectile.GetComponent<Rigidbody>();
         rb.velocity = transform.forward * projectileSpeed;
