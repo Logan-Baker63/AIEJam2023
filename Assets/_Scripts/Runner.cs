@@ -12,6 +12,8 @@ public class Runner : MonoBehaviour
     Rigidbody rb;
 
     [SerializeField] InputActionReference m_move;
+    [SerializeField] InputActionReference m_moveTouch;
+    Camera cam;
 
     [SerializeField] float m_speed;
     [SerializeField] float m_sideSpeed;
@@ -56,6 +58,7 @@ public class Runner : MonoBehaviour
         m_amountDisplay = GetComponentInChildren<TextMeshPro>();
         m_gameData = FindObjectOfType<GameData>();
         m_powerUps = GetComponent<PowerUps>();
+        cam = Camera.main;
 
         // Spawns followers
         for (int i = 0; i < m_followerPoints.Count; i++)
@@ -113,7 +116,22 @@ public class Runner : MonoBehaviour
         {
             rb.velocity += Vector3.right * dir.x * m_sideSpeed * Time.fixedDeltaTime;
         }
-        
+
+        Vector2 touchScreenPos = m_moveTouch.action.ReadValue<Vector2>();
+        if (touchScreenPos != Vector2.zero)
+        {
+            Vector2 runnerScreenPos = cam.WorldToScreenPoint(transform.position);
+
+            if (touchScreenPos.x > runnerScreenPos.x) // Run right 
+            {
+                if (transform.position.x < m_moveLimit) rb.velocity += m_sideSpeed * Time.fixedDeltaTime * Vector3.right;
+
+            }
+            else if (touchScreenPos.x < runnerScreenPos.x)
+            {
+                if (transform.position.x > -m_moveLimit) rb.velocity += m_sideSpeed * Time.fixedDeltaTime * -Vector3.right;
+            }
+        }
     }
 
     public void UpdateFollowers()

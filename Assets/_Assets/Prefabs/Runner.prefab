@@ -529,6 +529,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_move: {fileID: -2101849749655053866, guid: 7dd1db3d10963a54187968b6db17bb8d, type: 3}
+  m_moveTouch: {fileID: -4903021022347271965, guid: 7dd1db3d10963a54187968b6db17bb8d,
+    type: 3}
   m_speed: 1000
   m_sideSpeed: 500
   m_amount: 1
@@ -668,6 +670,10 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: b33ed13c-8625-425b-9541-36899dfcd37e
     m_ActionName: Player/Move[/Keyboard/w,/Keyboard/s,/Keyboard/a,/Keyboard/d]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 2d3a2761-1b0d-4011-a6b1-97a0ee3d9192
+    m_ActionName: Player/MoveTouch[/Mouse/leftButton,/Mouse/position]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player
