@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEngine.SceneManagement;
+using Unity.VisualScripting;
 
 public class GameOverGUI : MonoBehaviour
 {
@@ -50,8 +51,6 @@ public class GameOverGUI : MonoBehaviour
 
     public void DisplayGameOverGUI(int currentScore, int highScore)
     {
-        Debug.Log("Allo there");
-
         _canvas.enabled = true;
 
         _scoreText.text = currentScore.ToString();
@@ -69,9 +68,10 @@ public class GameOverGUI : MonoBehaviour
         }
     }
 
-    public void RestartGame()
+    public static void RestartGame()
     {
-        Debug.Log("Reloadedededed");
-        SceneManager.LoadScene(1);
+        Time.timeScale = 1;
+
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 }

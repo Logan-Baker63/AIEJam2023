@@ -87,7 +87,7 @@ public class Runner : MonoBehaviour
                 int iterations = m_followers.Count - (int)m_amount + 1;
                 for (int i = 0; i < iterations; i++)
                 {
-                    if (m_followers[0])
+                    if (m_followers.Count >= 1)
                     {
                         Destroy(m_followers[0].gameObject);
                         m_followers.RemoveAt(0);
@@ -115,6 +115,8 @@ public class Runner : MonoBehaviour
 
     void Die()
     {
+        Time.timeScale = 0;
+
         // Update highscore
         if (PlayerPrefs.GetInt("Highscore") < m_currentScore)
         {
