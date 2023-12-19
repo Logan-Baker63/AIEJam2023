@@ -868,6 +868,7 @@ GameObject:
   m_Component:
   - component: {fileID: 494105763}
   - component: {fileID: 494105765}
+  - component: {fileID: 494105766}
   - component: {fileID: 494105764}
   m_Layer: 5
   m_Name: Total Score
@@ -916,9 +917,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Total Score:
+  m_text: 'Total Score
 
-    15284628'
+    0'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: c0c83518442b41c498bae94304c7c0ec, type: 2}
   m_sharedMaterial: {fileID: -8493022043472307215, guid: c0c83518442b41c498bae94304c7c0ec,
@@ -996,6 +997,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 494105762}
   m_CullTransparentMesh: 1
+--- !u!114 &494105766
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 494105762}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d60283af9e292664caa6f6effb943aee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_type: 1
+  m_displayText: Total Score
 --- !u!1 &599125177
 GameObject:
   m_ObjectHideFlags: 0
@@ -2223,6 +2238,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1243769805}
   - component: {fileID: 1243769807}
+  - component: {fileID: 1243769808}
   - component: {fileID: 1243769806}
   m_Layer: 5
   m_Name: Current Value
@@ -2271,9 +2287,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Current Value:
+  m_text: 'Current Value
 
-    2679'
+    0'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: c0c83518442b41c498bae94304c7c0ec, type: 2}
   m_sharedMaterial: {fileID: -8493022043472307215, guid: c0c83518442b41c498bae94304c7c0ec,
@@ -2351,6 +2367,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1243769804}
   m_CullTransparentMesh: 1
+--- !u!114 &1243769808
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1243769804}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d60283af9e292664caa6f6effb943aee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_type: 0
+  m_displayText: Current Value
 --- !u!1 &1276660339
 GameObject:
   m_ObjectHideFlags: 0
@@ -2765,6 +2795,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1578421107}
   - component: {fileID: 1578421109}
+  - component: {fileID: 1578421110}
   - component: {fileID: 1578421108}
   m_Layer: 5
   m_Name: Highscore
@@ -2815,7 +2846,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'Highscore
 
-    12947582'
+    0'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: c0c83518442b41c498bae94304c7c0ec, type: 2}
   m_sharedMaterial: {fileID: -8493022043472307215, guid: c0c83518442b41c498bae94304c7c0ec,
@@ -2893,6 +2924,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1578421106}
   m_CullTransparentMesh: 1
+--- !u!114 &1578421110
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1578421106}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d60283af9e292664caa6f6effb943aee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_type: 2
+  m_displayText: Highscore
 --- !u!1 &1598298812
 GameObject:
   m_ObjectHideFlags: 0

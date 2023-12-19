@@ -37,6 +37,7 @@ public class Runner : MonoBehaviour
     public bool isRunning { get { return m_isRunning; } set { m_isRunning = value; } }
 
     float m_currentScore;
+    public float currentScore { get { return m_currentScore; } }
 
     GameData m_gameData;
 
