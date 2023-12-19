@@ -531,6 +531,7 @@ MonoBehaviour:
   m_move: {fileID: -2101849749655053866, guid: 7dd1db3d10963a54187968b6db17bb8d, type: 3}
   m_moveTouch: {fileID: -4903021022347271965, guid: 7dd1db3d10963a54187968b6db17bb8d,
     type: 3}
+  m_touchDistanceLeeway: 5
   m_speed: 1000
   m_sideSpeed: 500
   m_amount: 1
@@ -548,7 +549,7 @@ MonoBehaviour:
   - {fileID: 1127741656}
   - {fileID: 588816581}
   - {fileID: 747336409}
-  m_maxFollowerScale: 20
+  m_maxFollowerScale: 15
 --- !u!33 &4935536446885515563
 MeshFilter:
   m_ObjectHideFlags: 0

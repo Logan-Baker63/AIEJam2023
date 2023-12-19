@@ -13,6 +13,7 @@ public class Runner : MonoBehaviour
 
     [SerializeField] InputActionReference m_move;
     [SerializeField] InputActionReference m_moveTouch;
+    [SerializeField] float m_touchDistanceLeeway = 10;
     Camera cam;
 
     [SerializeField] float m_speed;
@@ -122,12 +123,12 @@ public class Runner : MonoBehaviour
         {
             Vector2 runnerScreenPos = cam.WorldToScreenPoint(transform.position);
 
-            if (touchScreenPos.x > runnerScreenPos.x) // Run right 
+            if (touchScreenPos.x > runnerScreenPos.x + m_touchDistanceLeeway) // Run right 
             {
                 if (transform.position.x < m_moveLimit) rb.velocity += m_sideSpeed * Time.fixedDeltaTime * Vector3.right;
 
             }
-            else if (touchScreenPos.x < runnerScreenPos.x)
+            else if (touchScreenPos.x < runnerScreenPos.x - m_touchDistanceLeeway)
             {
                 if (transform.position.x > -m_moveLimit) rb.velocity += m_sideSpeed * Time.fixedDeltaTime * -Vector3.right;
             }
