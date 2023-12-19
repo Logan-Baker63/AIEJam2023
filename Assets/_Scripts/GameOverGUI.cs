@@ -2,8 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
-using UnityEditor.SearchService;
 using UnityEngine.SceneManagement;
+using Unity.VisualScripting;
 
 public class GameOverGUI : MonoBehaviour
 {
@@ -12,10 +12,9 @@ public class GameOverGUI : MonoBehaviour
     [SerializeField] GameObject _failImage;
     [SerializeField] TextMeshProUGUI _scoreText;
     [SerializeField] TextMeshProUGUI _highScoreText;
+    GameOverCanvas _gameOverCanvas;
 
     [Header("Debug")]
-    [SerializeField] int _score;
-    [SerializeField] int _highScore;
     public static GameOverGUI Instance;
 
     private void Awake()
@@ -24,6 +23,10 @@ public class GameOverGUI : MonoBehaviour
         {
             Instance = this;
             DontDestroyOnLoad(gameObject);
+
+            Init();
+
+            SceneManager.activeSceneChanged += OnSceneLoaded;
         }
         else
         {
@@ -31,10 +34,23 @@ public class GameOverGUI : MonoBehaviour
         }
     }
 
+    void Init()
+    {
+        _gameOverCanvas = FindObjectOfType<GameOverCanvas>();
+        _canvas = _gameOverCanvas.GetComponent<Canvas>();
+        _winImage = _gameOverCanvas._winImage;
+        _failImage = _gameOverCanvas._failImage;
+        _scoreText = _gameOverCanvas._scoreText;
+        _highScoreText = _gameOverCanvas._highScoreText;
+    }
+
+    void OnSceneLoaded(Scene _scene, Scene _scene2)
+    {
+        Init();
+    }
+
     public void DisplayGameOverGUI(int currentScore, int highScore)
     {
-        Debug.Log("Allo there");
-
         _canvas.enabled = true;
 
         _scoreText.text = currentScore.ToString();
@@ -52,9 +68,10 @@ public class GameOverGUI : MonoBehaviour
         }
     }
 
-    public void RestartGame()
+    public static void RestartGame()
     {
-        Debug.Log("Reloadedededed");
-        SceneManager.LoadScene(1);
+        Time.timeScale = 1;
+
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 }
