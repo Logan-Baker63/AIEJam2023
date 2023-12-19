@@ -25,7 +25,7 @@ PrefabInstance:
     - target: {fileID: 1362385444532984082, guid: 7ae44657e16249b4e9a3b1e9d41672d9,
         type: 3}
       propertyPath: m_changeAmount
-      value: 1.4
+      value: 2.1
       objectReference: {fileID: 0}
     - target: {fileID: 2316804844155969637, guid: 7ae44657e16249b4e9a3b1e9d41672d9,
         type: 3}
@@ -90,12 +90,17 @@ PrefabInstance:
     - target: {fileID: 7052149180991556817, guid: 7ae44657e16249b4e9a3b1e9d41672d9,
         type: 3}
       propertyPath: m_text
-      value: /1.4
+      value: /2.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7052149180991556817, guid: 7ae44657e16249b4e9a3b1e9d41672d9,
+        type: 3}
+      propertyPath: m_fontSize
+      value: 25.15
       objectReference: {fileID: 0}
     - target: {fileID: 8738394024923038401, guid: 7ae44657e16249b4e9a3b1e9d41672d9,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: ca95384f913d11c4da41462baef1ff6e, type: 2}
+      objectReference: {fileID: 2100000, guid: 5214d0e4c5a22bc439ca28b9857d3d77, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7ae44657e16249b4e9a3b1e9d41672d9, type: 3}
