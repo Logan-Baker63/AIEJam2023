@@ -37,7 +37,6 @@ public class Obstacle : MonoBehaviour
     {
         m_health--;
         UpdateValueDisplay();
-
         m_runner.amount--;
         m_runner.UpdateFollowers();
 
