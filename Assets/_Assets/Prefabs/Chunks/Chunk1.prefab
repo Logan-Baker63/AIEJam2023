@@ -633,6 +633,9 @@ MonoBehaviour:
   - m_prefab: {fileID: 4128502105218797353, guid: a166c135afd0426409ee5c85ebdf099f,
       type: 3}
     m_spawnWeight: 1
+  - m_prefab: {fileID: 6432698041628569533, guid: 8e662a4979efd6c49aae753428042870,
+      type: 3}
+    m_spawnWeight: 1
   m_isTeleporter: 0
   m_teleportPerSec: 1
   m_teleportOffset: {x: 0, y: 0, z: 0}
@@ -694,6 +697,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4092054871350468903, guid: e5e96c2faad2e5a4888612b91e73dd38,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 4921602694122135128, guid: e5e96c2faad2e5a4888612b91e73dd38,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -702,7 +710,7 @@ PrefabInstance:
     - target: {fileID: 5127717703699638802, guid: e5e96c2faad2e5a4888612b91e73dd38,
         type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 6422610223352052338, guid: e5e96c2faad2e5a4888612b91e73dd38,
         type: 3}
