@@ -275,7 +275,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3121945025903964840}
   m_LocalRotation: {x: 0.17226523, y: -0, z: -0, w: 0.9850506}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0.012}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -284,7 +284,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 19.839, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 2.5}
+  m_AnchoredPosition: {x: 0, y: 2.81}
   m_SizeDelta: {x: 3.45, y: 1}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &6787247354216075953
@@ -684,8 +684,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   powerUpDuration: 5
-  projectilePrefab: {fileID: 2980188510784136123, guid: bee87bdb35c762048aaba87e31235154,
-    type: 3}
+  m_projectiles:
+  - {fileID: 2980188510784136123, guid: 2c34a8757c567c44290f6ee97dc162cd, type: 3}
+  - {fileID: 2980188510784136123, guid: 2a285f0956b908145975e07b0992e634, type: 3}
+  - {fileID: 2980188510784136123, guid: bee87bdb35c762048aaba87e31235154, type: 3}
   launchPoint: {fileID: 3623023594524961720}
   projectileSpeed: 100
   shootingInterval: 0.1
