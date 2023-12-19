@@ -105,7 +105,7 @@ MonoBehaviour:
   - m_prefab: {fileID: 377203705788837394, guid: 03efed9d980dd454e863a58c3de05ac7,
       type: 3}
     m_spawnWeight: 1
-  m_isTeleporter: 1
+  m_isTeleporter: 0
   m_teleportPerSec: 1.5
   m_teleportOffset: {x: 7.5, y: 0, z: 0}
 --- !u!1 &4767140690204532560
@@ -267,7 +267,7 @@ MonoBehaviour:
   - m_prefab: {fileID: 377203705788837394, guid: 6d2888942d588144bada20795850f782,
       type: 3}
     m_spawnWeight: 1
-  m_isTeleporter: 1
+  m_isTeleporter: 0
   m_teleportPerSec: 1.5
   m_teleportOffset: {x: -7.5, y: 0, z: 0}
 --- !u!1 &8311040785431244874
