@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae4d869d70349224d9a4e34deec6b3e3, type: 3}
+  m_Name: WalkingSFX
+  m_EditorClassIdentifier: 
+  audioGroupName: WalkingSFX
+  audioClips:
+  - {fileID: 8300000, guid: f91b37f7f802ea94ba5b7d3f0831a8ec, type: 3}
+  - {fileID: 8300000, guid: fd804fedf3162df4e9f087f534c0b36f, type: 3}
+  - {fileID: 8300000, guid: cf34e497dc8716942811a5f67551ba26, type: 3}
+  - {fileID: 8300000, guid: 2c12a98fe17fa854abc92feea138d612, type: 3}
+  - {fileID: 8300000, guid: eac682fd73faa46499f04b2051aba4fa, type: 3}
+  - {fileID: 8300000, guid: 99946b26925d4184e800813ef7e0aab6, type: 3}
+  - {fileID: 8300000, guid: 60d377e8218f9cd41a4da9c07b23d5c5, type: 3}
+  - {fileID: 8300000, guid: e764d57544cd0e644958b870f2ebb514, type: 3}
+  - {fileID: 8300000, guid: 91711d541deeba84bafb6cb7e2c97b27, type: 3}
+  - {fileID: 8300000, guid: 163d9cbebc7a0ee46840c29ba65ec9ad, type: 3}

@@ -39,7 +39,7 @@ public class Runner : MonoBehaviour
 
     private void Awake()
     {
-        rb = FindObjectOfType<Rigidbody>();
+        rb = GetComponent<Rigidbody>();
         m_amountDisplay = GetComponentInChildren<TextMeshPro>();
         m_gameData = FindObjectOfType<GameData>();
 
@@ -57,6 +57,7 @@ public class Runner : MonoBehaviour
     private void Update()
     {
         m_speed += Time.deltaTime * m_gameData.speedIncreasePerSec;
+        //AudioManager.Instance.PlayGroupAudio("WalkingSFX2");
     }
 
     public void Move()
@@ -116,7 +117,9 @@ public class Runner : MonoBehaviour
             PlayerPrefs.SetInt("Highscore", (int)m_currentScore);
         }
 
+        int highScore = PlayerPrefs.GetInt("Highscore");
         // Show UI
+        GameOverGUI.Instance.DisplayGameOverGUI((int)m_currentScore, highScore);
     }
 
     public void UpdateValueDisplay() => m_amountDisplay.text = m_amount.ToString();

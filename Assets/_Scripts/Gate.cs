@@ -61,7 +61,7 @@ public class Gate : MonoBehaviour
     {
         float currAmt = m_runner.amount;
 
-        if      (m_type == GateType.Addition) currAmt += m_changeAmount;
+        if (m_type == GateType.Addition) currAmt += m_changeAmount;
         else if (m_type == GateType.Subtraction) currAmt -= m_changeAmount;
         else if (m_type == GateType.Multiplication) currAmt *= m_changeAmount;
         else if (m_type == GateType.Division) currAmt /= m_changeAmount;
