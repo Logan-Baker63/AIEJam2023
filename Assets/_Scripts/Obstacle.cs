@@ -21,16 +21,20 @@ public class Obstacle : MonoBehaviour
 
     int m_originalHealth;
     [SerializeField] float m_healthRewardMultiplier = 1.5f;
+    [SerializeField] float m_shotRewardMultiplier = 0.5f;
 
     [SerializeField] float m_destructionPerSec = 1;
-    //[SerializeField] float m_destructionPerBullet = 10;
 
     [SerializeField] int m_bulletDmg = 5;
+
+    [SerializeField] bool m_rewardPowerup;
+    PowerUps m_powerUp;
 
     private void Awake()
     {
         m_runner = FindObjectOfType<Runner>();
         m_valueDisplay = GetComponentInChildren<TextMeshPro>();
+        m_powerUp = GetComponent<PowerUps>();
 
         if (m_randomizeHealth) m_health = UnityEngine.Random.Range(m_minHealth, m_maxHealth);
         UpdateValueDisplay();
@@ -52,6 +56,9 @@ public class Obstacle : MonoBehaviour
             {
                 m_runner.amount += (int)(m_originalHealth * m_healthRewardMultiplier);
                 m_runner.UpdateValueDisplay();
+
+                if (m_rewardPowerup) m_powerUp.BeginShoot();
+
                 Destroy(gameObject);
             }
 
@@ -65,7 +72,13 @@ public class Obstacle : MonoBehaviour
             m_health -= m_bulletDmg;
             UpdateValueDisplay();
 
-            if (m_health <= 0) Destroy(gameObject);
+            if (m_health <= 0)
+            {
+                m_runner.amount += (int)(m_originalHealth * m_shotRewardMultiplier);
+                m_runner.UpdateValueDisplay();
+
+                Destroy(gameObject);
+            }
 
             onDamaged?.Invoke();
         }
