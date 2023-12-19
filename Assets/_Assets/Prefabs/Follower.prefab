@@ -51,7 +51,7 @@ MonoBehaviour:
   m_runner: {fileID: 0}
   m_followDistance: -2
   m_randRangeX: 2
-  m_speed: 13
+  m_speed: 22
 --- !u!33 &8197594691602936709
 MeshFilter:
   m_ObjectHideFlags: 0

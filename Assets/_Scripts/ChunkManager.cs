@@ -66,6 +66,7 @@ public class ChunkManager : MonoBehaviour
 
         m_runner.transform.SetParent(m_chunks[1].transform);
         Camera.main.transform.SetParent(m_chunks[1].transform);
+        m_runner.m_followerParent.SetParent(m_chunks[1].transform);
     }
 
     GameObject GetRandomChunk()

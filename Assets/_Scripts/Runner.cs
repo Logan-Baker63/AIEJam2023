@@ -22,7 +22,7 @@ public class Runner : MonoBehaviour
         } 
     }
 
-    [SerializeField] Transform m_followerParent;
+    public Transform m_followerParent;
     [SerializeField] GameObject m_followerPrefab;
     List<Follower> m_followers = new();
 
