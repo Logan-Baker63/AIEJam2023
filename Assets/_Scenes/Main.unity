@@ -205,9 +205,9 @@ MonoBehaviour:
   m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
+  m_ReferenceResolution: {x: 122, y: 3000}
   m_ScreenMatchMode: 0
-  m_MatchWidthOrHeight: 0
+  m_MatchWidthOrHeight: 0.676
   m_PhysicalUnit: 3
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
@@ -404,8 +404,8 @@ MonoBehaviour:
   - m_prefab: {fileID: 4919927475262534798, guid: 326ac0344c3128a44a9b1d95416ba3a7,
       type: 3}
     m_spawnWeight: 1
-  m_isTeleporter: 0
-  m_teleportPerSec: 1
+  m_isMover: 0
+  m_moveDuration: 1
   m_teleportOffset: {x: 0, y: 0, z: 0}
 --- !u!1 &179171764
 GameObject:
@@ -455,8 +455,8 @@ MonoBehaviour:
   - m_prefab: {fileID: 377203705788837394, guid: de0ba7c0f58e8ff47a94621e57258ef6,
       type: 3}
     m_spawnWeight: 2
-  m_isTeleporter: 0
-  m_teleportPerSec: 1
+  m_isMover: 0
+  m_moveDuration: 1
   m_teleportOffset: {x: 0, y: 0, z: 0}
 --- !u!1 &233550888
 GameObject:
@@ -515,8 +515,8 @@ MonoBehaviour:
   - m_prefab: {fileID: 6432698041628569533, guid: 8e662a4979efd6c49aae753428042870,
       type: 3}
     m_spawnWeight: 1
-  m_isTeleporter: 0
-  m_teleportPerSec: 1
+  m_isMover: 0
+  m_moveDuration: 1
   m_teleportOffset: {x: 0, y: 0, z: 0}
 --- !u!1 &330585543
 GameObject:
@@ -597,14 +597,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 330585543}
-  m_LocalRotation: {x: 0.34343418, y: -0, z: -0, w: 0.93917674}
-  m_LocalPosition: {x: 0, y: 16, z: -58}
+  m_LocalRotation: {x: 0.37395883, y: -0, z: -0, w: 0.92744535}
+  m_LocalPosition: {x: 0, y: 21.63, z: -64.66}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1242087593}
   m_RootOrder: 17
-  m_LocalEulerAnglesHint: {x: 40.173, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 43.92, y: 0, z: 0}
 --- !u!114 &330585547
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -895,7 +895,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 250, y: 40}
+  m_SizeDelta: {x: 250, y: 141.8}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &494105764
 MonoBehaviour:
@@ -947,7 +947,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 20
+  m_fontSize: 47.25
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -1059,8 +1059,8 @@ MonoBehaviour:
   - m_prefab: {fileID: 377203705788837394, guid: de0ba7c0f58e8ff47a94621e57258ef6,
       type: 3}
     m_spawnWeight: 1
-  m_isTeleporter: 0
-  m_teleportPerSec: 1
+  m_isMover: 0
+  m_moveDuration: 1
   m_teleportOffset: {x: 7.5, y: 0, z: 0}
 --- !u!1 &616492869
 GameObject:
@@ -1156,16 +1156,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: GameOverGUI
-      objectReference: {fileID: 0}
-    - target: {fileID: 1906640476626626784, guid: cc14c994ba895d24cabcd092aac22959,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1906640476626626787, guid: cc14c994ba895d24cabcd092aac22959,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1906640476626626796, guid: cc14c994ba895d24cabcd092aac22959,
         type: 3}
@@ -1272,61 +1262,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1906640476978050264, guid: cc14c994ba895d24cabcd092aac22959,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1906640476978050264, guid: cc14c994ba895d24cabcd092aac22959,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1906640476978050264, guid: cc14c994ba895d24cabcd092aac22959,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 1744923419}
-    - target: {fileID: 1906640476978050264, guid: cc14c994ba895d24cabcd092aac22959,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 1906640476978050264, guid: cc14c994ba895d24cabcd092aac22959,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: RestartGame
-      objectReference: {fileID: 0}
-    - target: {fileID: 1906640476978050264, guid: cc14c994ba895d24cabcd092aac22959,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: GameOverGUI, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 1906640476978050264, guid: cc14c994ba895d24cabcd092aac22959,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
-    - target: {fileID: 2735142398415457374, guid: cc14c994ba895d24cabcd092aac22959,
-        type: 3}
-      propertyPath: _winImage
-      value: 
-      objectReference: {fileID: 624984813}
-    - target: {fileID: 2735142398415457374, guid: cc14c994ba895d24cabcd092aac22959,
-        type: 3}
-      propertyPath: _failImage
-      value: 
-      objectReference: {fileID: 624984812}
-    - target: {fileID: 2735142398415457374, guid: cc14c994ba895d24cabcd092aac22959,
-        type: 3}
-      propertyPath: _scoreText
-      value: 
-      objectReference: {fileID: 624984810}
-    - target: {fileID: 2735142398415457374, guid: cc14c994ba895d24cabcd092aac22959,
-        type: 3}
-      propertyPath: _highScoreText
-      value: 
-      objectReference: {fileID: 624984811}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cc14c994ba895d24cabcd092aac22959, type: 3}
 --- !u!114 &624984810 stripped
@@ -1419,8 +1354,8 @@ MonoBehaviour:
   - m_prefab: {fileID: 4919927475262534798, guid: 326ac0344c3128a44a9b1d95416ba3a7,
       type: 3}
     m_spawnWeight: 1
-  m_isTeleporter: 0
-  m_teleportPerSec: 1
+  m_isMover: 0
+  m_moveDuration: 1
   m_teleportOffset: {x: 0, y: 0, z: 0}
 --- !u!1001 &700285575
 PrefabInstance:
@@ -1662,52 +1597,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: AudioManager
       objectReference: {fileID: 0}
-    - target: {fileID: 2399611521113166961, guid: c2a43d24360a54b4bb5ca148f5a0e4dd,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2399611521113166962, guid: c2a43d24360a54b4bb5ca148f5a0e4dd,
-        type: 3}
-      propertyPath: sfxAudio.Array.size
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2399611521113166962, guid: c2a43d24360a54b4bb5ca148f5a0e4dd,
-        type: 3}
-      propertyPath: musicAudio.Array.size
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2399611521113166962, guid: c2a43d24360a54b4bb5ca148f5a0e4dd,
-        type: 3}
-      propertyPath: audioGroups.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 2399611521113166962, guid: c2a43d24360a54b4bb5ca148f5a0e4dd,
-        type: 3}
-      propertyPath: audioGroups.Array.data[1]
-      value: 
-      objectReference: {fileID: 11400000, guid: 5074011e6b1d3374f85c4ba186d07e19,
-        type: 2}
-    - target: {fileID: 2399611521113166962, guid: c2a43d24360a54b4bb5ca148f5a0e4dd,
-        type: 3}
-      propertyPath: sfxAudio.Array.data[0].clip
-      value: 
-      objectReference: {fileID: 8300000, guid: d0d8bfe2fcdbfc5488548326ae27f7f8, type: 3}
-    - target: {fileID: 2399611521113166962, guid: c2a43d24360a54b4bb5ca148f5a0e4dd,
-        type: 3}
-      propertyPath: musicAudio.Array.data[0].clip
-      value: 
-      objectReference: {fileID: 8300000, guid: d0d8bfe2fcdbfc5488548326ae27f7f8, type: 3}
-    - target: {fileID: 2399611521113166962, guid: c2a43d24360a54b4bb5ca148f5a0e4dd,
-        type: 3}
-      propertyPath: sfxAudio.Array.data[0].audioName
-      value: +
-      objectReference: {fileID: 0}
-    - target: {fileID: 2399611521113166962, guid: c2a43d24360a54b4bb5ca148f5a0e4dd,
-        type: 3}
-      propertyPath: musicAudio.Array.data[0].audioName
-      value: +
-      objectReference: {fileID: 0}
     - target: {fileID: 2399611521113166963, guid: c2a43d24360a54b4bb5ca148f5a0e4dd,
         type: 3}
       propertyPath: m_RootOrder
@@ -1813,8 +1702,8 @@ MonoBehaviour:
   - m_prefab: {fileID: 4919927475262534798, guid: 326ac0344c3128a44a9b1d95416ba3a7,
       type: 3}
     m_spawnWeight: 1
-  m_isTeleporter: 0
-  m_teleportPerSec: 1
+  m_isMover: 0
+  m_moveDuration: 1
   m_teleportOffset: {x: 0, y: 0, z: 0}
 --- !u!1 &893093698
 GameObject:
@@ -1932,8 +1821,8 @@ MonoBehaviour:
   - m_prefab: {fileID: 4919927475262534798, guid: 326ac0344c3128a44a9b1d95416ba3a7,
       type: 3}
     m_spawnWeight: 1
-  m_isTeleporter: 0
-  m_teleportPerSec: 1
+  m_isMover: 0
+  m_moveDuration: 1
   m_teleportOffset: {x: 0, y: 0, z: 0}
 --- !u!1001 &1000452099
 PrefabInstance:
@@ -2265,7 +2154,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 250, y: 40}
+  m_SizeDelta: {x: 250, y: 141.8}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &1243769806
 MonoBehaviour:
@@ -2317,7 +2206,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 20
+  m_fontSize: 47.25
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -2646,8 +2535,8 @@ MonoBehaviour:
   - m_prefab: {fileID: 4919927475262534798, guid: 326ac0344c3128a44a9b1d95416ba3a7,
       type: 3}
     m_spawnWeight: 1
-  m_isTeleporter: 0
-  m_teleportPerSec: 1
+  m_isMover: 0
+  m_moveDuration: 1
   m_teleportOffset: {x: 0, y: 0, z: 0}
 --- !u!1 &1535199331
 GameObject:
@@ -2822,7 +2711,7 @@ RectTransform:
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 250, y: 40}
+  m_SizeDelta: {x: 250, y: 141.8}
   m_Pivot: {x: 1, y: 1}
 --- !u!114 &1578421108
 MonoBehaviour:
@@ -2844,7 +2733,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Highscore
+  m_text: 'High Score
 
     0'
   m_isRightToLeft: 0
@@ -2874,7 +2763,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 20
+  m_fontSize: 47.25
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -2937,7 +2826,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_type: 2
-  m_displayText: Highscore
+  m_displayText: High Score
 --- !u!1 &1598298812
 GameObject:
   m_ObjectHideFlags: 0
@@ -2986,8 +2875,8 @@ MonoBehaviour:
   - m_prefab: {fileID: 4919927475262534798, guid: 326ac0344c3128a44a9b1d95416ba3a7,
       type: 3}
     m_spawnWeight: 1
-  m_isTeleporter: 0
-  m_teleportPerSec: 1
+  m_isMover: 0
+  m_moveDuration: 1
   m_teleportOffset: {x: 0, y: 0, z: 0}
 --- !u!1 &1643240146
 GameObject:
@@ -3043,8 +2932,8 @@ MonoBehaviour:
   - m_prefab: {fileID: 377203705788837394, guid: de0ba7c0f58e8ff47a94621e57258ef6,
       type: 3}
     m_spawnWeight: 1
-  m_isTeleporter: 0
-  m_teleportPerSec: 1
+  m_isMover: 0
+  m_moveDuration: 1
   m_teleportOffset: {x: 0, y: 0, z: 0}
 --- !u!1 &1646472864
 GameObject:
@@ -3094,8 +2983,8 @@ MonoBehaviour:
   - m_prefab: {fileID: 4919927475262534798, guid: 326ac0344c3128a44a9b1d95416ba3a7,
       type: 3}
     m_spawnWeight: 1
-  m_isTeleporter: 0
-  m_teleportPerSec: 1
+  m_isMover: 0
+  m_moveDuration: 1
   m_teleportOffset: {x: 0, y: 0, z: 0}
 --- !u!1001 &1744923418
 PrefabInstance:
@@ -3201,18 +3090,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 89781b6b776aba0498cdbe140363007d, type: 3}
---- !u!114 &1744923419 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 4711621824733863636, guid: 89781b6b776aba0498cdbe140363007d,
-    type: 3}
-  m_PrefabInstance: {fileID: 1744923418}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a957f17cbda26ef4cab151c15e948a13, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1787695143
 GameObject:
   m_ObjectHideFlags: 0
@@ -3261,8 +3138,8 @@ MonoBehaviour:
   - m_prefab: {fileID: 4919927475262534798, guid: 326ac0344c3128a44a9b1d95416ba3a7,
       type: 3}
     m_spawnWeight: 1
-  m_isTeleporter: 0
-  m_teleportPerSec: 1
+  m_isMover: 0
+  m_moveDuration: 1
   m_teleportOffset: {x: 0, y: 0, z: 0}
 --- !u!1001 &1841206237
 PrefabInstance:
@@ -3411,8 +3288,8 @@ MonoBehaviour:
   - m_prefab: {fileID: 4919927475262534798, guid: 326ac0344c3128a44a9b1d95416ba3a7,
       type: 3}
     m_spawnWeight: 1
-  m_isTeleporter: 0
-  m_teleportPerSec: 1
+  m_isMover: 0
+  m_moveDuration: 1
   m_teleportOffset: {x: 0, y: 0, z: 0}
 --- !u!1 &1891694974
 GameObject:
@@ -3512,8 +3389,8 @@ MonoBehaviour:
   - m_prefab: {fileID: 4919927475262534798, guid: 326ac0344c3128a44a9b1d95416ba3a7,
       type: 3}
     m_spawnWeight: 1
-  m_isTeleporter: 0
-  m_teleportPerSec: 1
+  m_isMover: 0
+  m_moveDuration: 1
   m_teleportOffset: {x: 0, y: 0, z: 0}
 --- !u!1001 &2138952279
 PrefabInstance:
