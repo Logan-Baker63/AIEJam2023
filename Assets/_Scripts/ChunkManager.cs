@@ -26,9 +26,15 @@ public class ChunkManager : MonoBehaviour
 
     bool m_isFirstChunk = true;
 
+    int m_chunkCounter;
+    [SerializeField] GameObject m_miniBossChunk, m_bossChunk;
+    [SerializeField] int m_miniBossFrequency = 10, m_bossFrequency = 40;
+
     private void Awake()
     {
         m_runner = FindObjectOfType<Runner>();
+
+        m_chunkCounter = m_chunks.Count; // Should be 1
 
         SpawnChunk();
         SpawnChunk();
@@ -51,6 +57,8 @@ public class ChunkManager : MonoBehaviour
 
     void SpawnChunk()
     {
+        m_chunkCounter++;
+
         GameObject chunkObj = Instantiate(GetRandomChunk(), new Vector3(0, 2, m_lastChunkPosZ + m_chunkSize), Quaternion.identity);
         chunkObj.transform.SetParent(transform);
         m_chunks.Add(chunkObj.GetComponent<Chunk>());
@@ -62,6 +70,9 @@ public class ChunkManager : MonoBehaviour
 
     GameObject GetRandomChunk()
     {
+        if (m_chunkCounter % m_bossFrequency == 0) return m_bossChunk; // Return boss chunk
+        else if (m_chunkCounter % m_miniBossFrequency == 0) return m_miniBossChunk; // Return mini boss chunk
+
         int totalWeight = 0;
         foreach (ChunkSpawn chunk in m_chunkSpawnPool) totalWeight += chunk.weight;
 

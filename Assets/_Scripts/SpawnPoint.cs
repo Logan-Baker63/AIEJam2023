@@ -16,6 +16,13 @@ public class SpawnPoint : MonoBehaviour
 {
     [SerializeField] List<Spawnable> m_spawnables;
 
+    [SerializeField] bool m_isTeleporter = false;
+    [SerializeField] [ConditionalHide("m_isTeleporter")] float m_teleportPerSec = 1;
+    [SerializeField] [ConditionalHide("m_isTeleporter")] Vector3 m_teleportOffset;
+    Vector3 m_originalPos;
+
+    GameObject m_obj;
+
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.yellow;
@@ -24,8 +31,10 @@ public class SpawnPoint : MonoBehaviour
 
     public void Spawn()
     {
-        GameObject obj = Instantiate(GetRandomSpawnable(), transform.position, transform.rotation);
-        obj.transform.SetParent(transform.parent);
+        m_obj = Instantiate(GetRandomSpawnable(), transform.position, transform.rotation);
+        m_obj.transform.SetParent(transform.parent);
+
+        m_originalPos = m_obj.transform.localPosition;
     }
 
     GameObject GetRandomSpawnable()
@@ -45,5 +54,22 @@ public class SpawnPoint : MonoBehaviour
 
         Debug.LogWarning("Weight find failed");
         return m_spawnables[0].prefab;
+    }
+
+    float m_counter = 0;
+    private void Update()
+    {
+        if (m_isTeleporter)
+        {
+            m_counter += Time.deltaTime;
+
+            if (m_counter >= 1 / m_teleportPerSec)
+            {
+                if (m_obj.transform.localPosition != m_originalPos) m_obj.transform.localPosition = m_originalPos;
+                else m_obj.transform.localPosition += m_teleportOffset;
+
+                m_counter = 0;
+            }
+        }
     }
 }
