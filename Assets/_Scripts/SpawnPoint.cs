@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using DG.Tweening.Core;
+using DG.Tweening;
 
 [System.Serializable]
 public struct Spawnable
@@ -16,9 +18,9 @@ public class SpawnPoint : MonoBehaviour
 {
     [SerializeField] List<Spawnable> m_spawnables;
 
-    [SerializeField] bool m_isTeleporter = false;
-    [SerializeField] [ConditionalHide("m_isTeleporter")] float m_teleportPerSec = 1;
-    [SerializeField] [ConditionalHide("m_isTeleporter")] Vector3 m_teleportOffset;
+    [SerializeField] bool m_isMover = false;
+    [SerializeField] [ConditionalHide("m_isMover")] float m_moveDuration = 1;
+    [SerializeField] [ConditionalHide("m_isMover")] Vector3 m_teleportOffset;
     Vector3 m_originalPos;
 
     GameObject m_obj;
@@ -35,6 +37,8 @@ public class SpawnPoint : MonoBehaviour
         m_obj.transform.SetParent(transform.parent);
 
         m_originalPos = m_obj.transform.localPosition;
+
+        if (m_isMover) m_obj.transform.DOLocalMove(transform.localPosition + m_teleportOffset, m_moveDuration).SetLoops(-1, LoopType.Yoyo).SetEase(Ease.InOutSine);
     }
 
     GameObject GetRandomSpawnable()
@@ -59,17 +63,17 @@ public class SpawnPoint : MonoBehaviour
     float m_counter = 0;
     private void Update()
     {
-        if (m_isTeleporter)
-        {
-            m_counter += Time.deltaTime;
-
-            if (m_counter >= 1 / m_teleportPerSec)
-            {
-                if (m_obj.transform.localPosition != m_originalPos) m_obj.transform.localPosition = m_originalPos;
-                else m_obj.transform.localPosition += m_teleportOffset;
-
-                m_counter = 0;
-            }
-        }
+        //if (m_isTeleporter)
+        //{
+        //    m_counter += Time.deltaTime;
+        //
+        //    if (m_counter >= 1 / m_moveDuration)
+        //    {
+        //        if (m_obj.transform.localPosition != m_originalPos) m_obj.transform.localPosition = m_originalPos;
+        //        else m_obj.transform.localPosition += m_teleportOffset;
+        //
+        //        m_counter = 0;
+        //    }
+        //}
     }
 }

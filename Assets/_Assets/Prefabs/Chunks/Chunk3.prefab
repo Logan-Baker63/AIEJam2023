@@ -48,8 +48,8 @@ MonoBehaviour:
   - m_prefab: {fileID: 4919927475262534798, guid: 326ac0344c3128a44a9b1d95416ba3a7,
       type: 3}
     m_spawnWeight: 1
-  m_isTeleporter: 0
-  m_teleportPerSec: 1
+  m_isMover: 0
+  m_moveDuration: 1
   m_teleportOffset: {x: 0, y: 0, z: 0}
 --- !u!1 &4460287519802896440
 GameObject:
@@ -105,8 +105,8 @@ MonoBehaviour:
   - m_prefab: {fileID: 377203705788837394, guid: 03efed9d980dd454e863a58c3de05ac7,
       type: 3}
     m_spawnWeight: 1
-  m_isTeleporter: 0
-  m_teleportPerSec: 1.5
+  m_isMover: 0
+  m_moveDuration: 1
   m_teleportOffset: {x: 7.5, y: 0, z: 0}
 --- !u!1 &4767140690204532560
 GameObject:
@@ -162,8 +162,8 @@ MonoBehaviour:
   - m_prefab: {fileID: 377203705788837394, guid: 03efed9d980dd454e863a58c3de05ac7,
       type: 3}
     m_spawnWeight: 1
-  m_isTeleporter: 0
-  m_teleportPerSec: 1
+  m_isMover: 0
+  m_moveDuration: 1
   m_teleportOffset: {x: 0, y: 0, z: 0}
 --- !u!1 &6196852368878837156
 GameObject:
@@ -213,8 +213,8 @@ MonoBehaviour:
   - m_prefab: {fileID: 4919927475262534798, guid: 326ac0344c3128a44a9b1d95416ba3a7,
       type: 3}
     m_spawnWeight: 1
-  m_isTeleporter: 0
-  m_teleportPerSec: 1
+  m_isMover: 0
+  m_moveDuration: 1
   m_teleportOffset: {x: 0, y: 0, z: 0}
 --- !u!1 &6775132336501580928
 GameObject:
@@ -267,8 +267,8 @@ MonoBehaviour:
   - m_prefab: {fileID: 377203705788837394, guid: 6d2888942d588144bada20795850f782,
       type: 3}
     m_spawnWeight: 1
-  m_isTeleporter: 0
-  m_teleportPerSec: 1.5
+  m_isMover: 0
+  m_moveDuration: 1
   m_teleportOffset: {x: -7.5, y: 0, z: 0}
 --- !u!1 &8311040785431244874
 GameObject:
@@ -318,8 +318,8 @@ MonoBehaviour:
   - m_prefab: {fileID: 4919927475262534798, guid: 326ac0344c3128a44a9b1d95416ba3a7,
       type: 3}
     m_spawnWeight: 1
-  m_isTeleporter: 0
-  m_teleportPerSec: 1
+  m_isMover: 0
+  m_moveDuration: 1
   m_teleportOffset: {x: 0, y: 0, z: 0}
 --- !u!1 &8425712003899176876
 GameObject:
@@ -369,8 +369,8 @@ MonoBehaviour:
   - m_prefab: {fileID: 4919927475262534798, guid: 326ac0344c3128a44a9b1d95416ba3a7,
       type: 3}
     m_spawnWeight: 1
-  m_isTeleporter: 0
-  m_teleportPerSec: 1
+  m_isMover: 0
+  m_moveDuration: 1
   m_teleportOffset: {x: 0, y: 0, z: 0}
 --- !u!1 &8477244700837941738
 GameObject:
@@ -397,7 +397,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8477244700837941738}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 3.75, y: -2, z: 46.6}
+  m_LocalPosition: {x: 3.75, y: -2, z: 40}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -420,8 +420,8 @@ MonoBehaviour:
   - m_prefab: {fileID: 4128502105218797353, guid: 62b5ed405c8de2144a0144e515bfb87b,
       type: 3}
     m_spawnWeight: 1
-  m_isTeleporter: 1
-  m_teleportPerSec: 2
+  m_isMover: 1
+  m_moveDuration: 1
   m_teleportOffset: {x: -7.5, y: 0, z: 0}
 --- !u!1001 &4034308702948588486
 PrefabInstance:

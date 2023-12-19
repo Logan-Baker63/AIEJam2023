@@ -52,7 +52,6 @@ public class Obstacle : MonoBehaviour
            UpdateValueDisplay();
             if (!m_powerUp.isInvulnerable)
             {
-                Debug.Log("Is not invulnerable");
                 m_runner.amount -= Time.fixedDeltaTime * m_destructionPerSec;
                 m_runner.UpdateFollowers();
             }
