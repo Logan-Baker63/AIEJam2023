@@ -11,7 +11,9 @@ public class PowerUps : MonoBehaviour
     [SerializeField] float projectileSpeed = 10f;
     [SerializeField] float shootingInterval = 0.1f;
     bool hasPowerUp = false;
-
+    public float invulnerabilityDuration = 10.0f;
+    public bool isInvulnerable = false;
+    Runner runner;
 
     private void OnTriggerEnter(Collider collision)
     {
@@ -21,6 +23,21 @@ public class PowerUps : MonoBehaviour
 
             BeginShoot();
         }
+        if (collision.gameObject.tag == "PooShields")
+        {
+            collision.gameObject.SetActive(false);
+
+            GetInvulnerable();
+        }
+    }
+
+    public void GetInvulnerable() => StartCoroutine(InvulnerabilityRoutine());
+
+    private IEnumerator InvulnerabilityRoutine()
+    {
+        isInvulnerable = true;
+        yield return new WaitForSeconds(invulnerabilityDuration);
+        isInvulnerable = false;
     }
 
     public void BeginShoot() => StartCoroutine(ShootForDuration());
@@ -38,14 +55,6 @@ public class PowerUps : MonoBehaviour
 
         hasPowerUp = false;
     }
-    //private void Update()
-    //{
-    //    if(Input.GetKeyUp(KeyCode.Space) && hasPowerUp)
-    //    {
-    //        Shoot();
-    //        //Debug.Log("Fire");
-    //    }
-    //}
 
     private void Shoot()
     {
@@ -54,6 +63,8 @@ public class PowerUps : MonoBehaviour
         rb.velocity = transform.forward * projectileSpeed;
         Destroy(projectile, 5);
     }
+
+
 
     GameObject GetRandomProjectile()
     {
