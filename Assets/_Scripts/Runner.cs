@@ -37,6 +37,8 @@ public class Runner : MonoBehaviour
 
     GameData m_gameData;
 
+    bool m_isDead;
+
     private void Awake()
     {
         rb = GetComponent<Rigidbody>();
@@ -76,7 +78,7 @@ public class Runner : MonoBehaviour
         if (m_amount <= 0)
         {
             // Die
-            Die();
+            if (!m_isDead) Die();
         }
         else
         {
@@ -85,8 +87,11 @@ public class Runner : MonoBehaviour
                 int iterations = m_followers.Count - (int)m_amount + 1;
                 for (int i = 0; i < iterations; i++)
                 {
-                    Destroy(m_followers[0].gameObject);
-                    m_followers.RemoveAt(0);
+                    if (m_followers[0])
+                    {
+                        Destroy(m_followers[0].gameObject);
+                        m_followers.RemoveAt(0);
+                    }
                 }
             }
             else if (m_followers.Count < m_amount + 1)
