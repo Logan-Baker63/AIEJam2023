@@ -202,6 +202,9 @@ MonoBehaviour:
   - m_prefab: {fileID: 377203705788837394, guid: de0ba7c0f58e8ff47a94621e57258ef6,
       type: 3}
     m_spawnWeight: 2
+  m_isTeleporter: 0
+  m_teleportPerSec: 1
+  m_teleportOffset: {x: 0, y: 0, z: 0}
 --- !u!1 &330585543
 GameObject:
   m_ObjectHideFlags: 0
@@ -572,6 +575,12 @@ MonoBehaviour:
     m_weight: 1
   m_chunks:
   - {fileID: 1242087594}
+  m_miniBossChunk: {fileID: 5591449606091794791, guid: 7a24ab8ee4b910746a02bd4dfe2223ea,
+    type: 3}
+  m_bossChunk: {fileID: 5591449606091794791, guid: acfa8533cb348664fa567c676c2f077c,
+    type: 3}
+  m_miniBossFrequency: 10
+  m_bossFrequency: 40
 --- !u!4 &1242087593 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5591449606091794788, guid: a6c625981f54d264185eba604b2674f4,
@@ -825,6 +834,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7278969578396200984, guid: a6c625981f54d264185eba604b2674f4,
         type: 3}
+      propertyPath: m_isTeleporter
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7278969578396200984, guid: a6c625981f54d264185eba604b2674f4,
+        type: 3}
       propertyPath: m_spawnables.Array.size
       value: 1
       objectReference: {fileID: 0}
@@ -944,11 +958,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4935536446885515565, guid: e8e4ef9e27ef27c439c3f14d98dc3a95,
-        type: 3}
-      propertyPath: m_speed
-      value: 2000
       objectReference: {fileID: 0}
     - target: {fileID: 4935536446885515565, guid: e8e4ef9e27ef27c439c3f14d98dc3a95,
         type: 3}

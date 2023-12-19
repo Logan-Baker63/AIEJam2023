@@ -13,8 +13,8 @@ public class Runner : MonoBehaviour
     [SerializeField] float m_speed;
     [SerializeField] float m_sideSpeed;
 
-    [SerializeField] int m_amount;
-    public int amount { get { return m_amount; } 
+    [SerializeField] float m_amount;
+    public float amount { get { return m_amount; } 
         set 
         { 
             m_amount = value;
@@ -33,7 +33,7 @@ public class Runner : MonoBehaviour
     bool m_isRunning = true;
     public bool isRunning { get { return m_isRunning; } set { m_isRunning = value; } }
 
-    int m_currentScore;
+    float m_currentScore;
 
     GameData m_gameData;
 
@@ -81,7 +81,7 @@ public class Runner : MonoBehaviour
         {
             if (m_followers.Count > m_amount + 1)
             {
-                int iterations = m_followers.Count - m_amount + 1;
+                int iterations = m_followers.Count - (int)m_amount + 1;
                 for (int i = 0; i < iterations; i++)
                 {
                     Destroy(m_followers[0].gameObject);
@@ -90,7 +90,7 @@ public class Runner : MonoBehaviour
             }
             else if (m_followers.Count < m_amount + 1)
             {
-                int iterations = m_amount + 1 - m_followers.Count;
+                int iterations = (int)m_amount + 1 - m_followers.Count;
                 for (int i = 0; i < iterations; i++)
                 {
                     if (m_followers.Count < 15)
@@ -113,7 +113,7 @@ public class Runner : MonoBehaviour
         if (PlayerPrefs.GetInt("Highscore") < m_currentScore)
         {
             // New highscore!
-            PlayerPrefs.SetInt("Highscore", m_currentScore);
+            PlayerPrefs.SetInt("Highscore", (int)m_currentScore);
         }
 
         // Show UI

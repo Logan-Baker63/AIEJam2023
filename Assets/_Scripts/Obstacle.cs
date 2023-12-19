@@ -7,10 +7,10 @@ using UnityEngine;
 public class Obstacle : MonoBehaviour
 {
     [SerializeField] bool m_randomizeHealth = true;
-    [SerializeField] [ConditionalHide("m_randomizeHealth", Inverse = true)] int m_health = 100;
+    [SerializeField] [ConditionalHide("m_randomizeHealth", Inverse = true)] float m_health = 100;
     [SerializeField] [ConditionalHide("m_randomizeHealth")] int m_minHealth = 10, m_maxHealth = 100;
 
-    public int health { get { return m_health; } }
+    public int health { get { return (int)m_health; } }
     public int maxHealth { get { return m_maxHealth; } }    
 
     Runner m_runner;
@@ -22,6 +22,8 @@ public class Obstacle : MonoBehaviour
     int m_originalHealth;
     [SerializeField] float m_healthRewardMultiplier = 1.5f;
 
+    [SerializeField] float m_destructionPerSec = 1;
+
     private void Awake()
     {
         m_runner = FindObjectOfType<Runner>();
@@ -30,15 +32,15 @@ public class Obstacle : MonoBehaviour
         if (m_randomizeHealth) m_health = UnityEngine.Random.Range(m_minHealth, m_maxHealth);
         UpdateValueDisplay();
 
-        m_originalHealth = m_health;
+        m_originalHealth = (int)m_health;
     }
 
     public void Damage()
     {
-        m_health--;
+        m_health -= Time.fixedDeltaTime * m_destructionPerSec;
         UpdateValueDisplay();
 
-        m_runner.amount--;
+        m_runner.amount -= Time.fixedDeltaTime * m_destructionPerSec;
         m_runner.UpdateFollowers();
 
         if (m_health <= 0)
@@ -51,5 +53,5 @@ public class Obstacle : MonoBehaviour
         onDamaged?.Invoke();
     }
 
-    public void UpdateValueDisplay() => m_valueDisplay.text = m_health.ToString();
+    public void UpdateValueDisplay() => m_valueDisplay.text = health.ToString();
 }
