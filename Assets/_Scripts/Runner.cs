@@ -42,11 +42,14 @@ public class Runner : MonoBehaviour
     [SerializeField] float m_followerScaleIncreaseMulti = 0.1f;
     [SerializeField] List<Transform> m_followerPoints;
 
+    [SerializeField] ParticleSystem m_particle;
+
     private void Awake()
     {
         rb = GetComponent<Rigidbody>();
         m_amountDisplay = GetComponentInChildren<TextMeshPro>();
         m_gameData = FindObjectOfType<GameData>();
+        m_particle = GetComponentInChildren<ParticleSystem>();
 
         // Spawns followers
         for (int i = 0; i < m_followerPoints.Count; i++)
