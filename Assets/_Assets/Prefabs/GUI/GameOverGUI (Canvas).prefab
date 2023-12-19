@@ -305,7 +305,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1906640475721143606
 RectTransform:
   m_ObjectHideFlags: 0
@@ -516,7 +516,7 @@ GameObject:
   - component: {fileID: 1906640475841069089}
   - component: {fileID: 1906640475841069088}
   m_Layer: 5
-  m_Name: Failed
+  m_Name: Win
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -570,18 +570,18 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: WINNER
+  m_text: New High Score!
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 416765d18dd6dc04a9507f7e0b5e79da, type: 2}
-  m_sharedMaterial: {fileID: -1401185031453778887, guid: 416765d18dd6dc04a9507f7e0b5e79da,
+  m_fontAsset: {fileID: 11400000, guid: c0c83518442b41c498bae94304c7c0ec, type: 2}
+  m_sharedMaterial: {fileID: -8493022043472307215, guid: c0c83518442b41c498bae94304c7c0ec,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4284252065
-  m_fontColor: {r: 0.6313726, g: 0.49803925, b: 0.36078432, a: 1}
+    rgba: 4280076012
+  m_fontColor: {r: 0.9245283, g: 0.7752574, b: 0.10902455, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -818,7 +818,7 @@ GameObject:
   - component: {fileID: 1906640475951921966}
   - component: {fileID: 1906640475951921965}
   m_Layer: 5
-  m_Name: skull
+  m_Name: Diamond
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
