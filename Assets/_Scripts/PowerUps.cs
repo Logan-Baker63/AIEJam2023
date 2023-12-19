@@ -6,24 +6,54 @@ using System.Collections;
 public class PowerUps : MonoBehaviour
 {
     public float powerUpDuration = 5f;
-    [SerializeField] GameObject projectile;
+    [SerializeField] GameObject projectilePrefab, launchPoint;
+    [SerializeField] float projectileSpeed = 10f;
+    [SerializeField] float shootingInterval = 0.1f;
     bool hasPowerUp = false;
+
 
     private void OnTriggerEnter(Collider collision)
     {
         if (collision.gameObject.tag == "PowerUp")
         {
-            hasPowerUp = true;
+
             collision.gameObject.SetActive(false);
+
+            //TODO: Shoot() repeatly until powerupDuration rans outs
+            StartCoroutine(ShootForDuration());
             Debug.Log("Touched");
         }
     }
 
-    private void Update()
+
+
+
+    private IEnumerator ShootForDuration()
     {
-        if(Input.GetKeyUp(KeyCode.Space) && hasPowerUp)
+        hasPowerUp = true;
+        float endTime = Time.time + powerUpDuration;
+
+        while (Time.time < endTime)
         {
-            Debug.Log("Fire");
+            Shoot();
+            yield return new WaitForSeconds(shootingInterval);
         }
+
+        hasPowerUp = false;
+    }
+    //private void Update()
+    //{
+    //    if(Input.GetKeyUp(KeyCode.Space) && hasPowerUp)
+    //    {
+    //        Shoot();
+    //        //Debug.Log("Fire");
+    //    }
+    //}
+
+    private void Shoot()
+    {
+        GameObject projectile = Instantiate(projectilePrefab, transform.position + transform.forward, transform.rotation);
+        Rigidbody rb = projectile.GetComponent<Rigidbody>();
+        rb.velocity = transform.forward * projectileSpeed;
     }
 }
