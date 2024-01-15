@@ -38,7 +38,7 @@ public class ChunkManager : MonoBehaviour
         m_chunkCounter = m_chunks.Count; // Should be 1
 
         SpawnChunk();
-        SpawnChunk();
+        //SpawnChunk();
     }
 
     public void ExitChunk(Chunk _chunk)
