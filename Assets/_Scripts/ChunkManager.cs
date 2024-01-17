@@ -51,7 +51,7 @@ public class ChunkManager : MonoBehaviour
         }
         else m_isFirstChunk = false;
 
-        ShiftLevelBack();
+        //ShiftLevelBack();
 
         SpawnChunk();
     }
